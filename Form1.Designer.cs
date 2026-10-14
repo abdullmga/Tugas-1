@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(720, 1024);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(57, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(579, 57);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Log In";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(439, 406);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(197, 29);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Forgot Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(180, 577);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(351, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Don\'t have an Account? Sign Up";
             // 
             // textBox2
             // 
@@ -109,35 +140,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Log In";
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(180, 577);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(351, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Don\'t have an Account? Sign Up";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(439, 406);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(197, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Forgot Password";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(57, 493);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(579, 57);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(66, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(614, 182);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Selamat datang \r\ndi InvestOS";
             // 
             // Form1
             // 
@@ -145,6 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(255)))), ((int)(((byte)(111)))));
             this.ClientSize = new System.Drawing.Size(1418, 968);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1440, 1024);
@@ -156,6 +168,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -170,6 +183,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
