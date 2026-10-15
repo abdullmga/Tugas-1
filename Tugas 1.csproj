@@ -48,16 +48,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Pendaftaran.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Pendaftaran.Designer.cs">
+      <DependentUpon>Pendaftaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelamatDatang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelamatDatang.Designer.cs">
+      <DependentUpon>SelamatDatang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masuk.Designer.cs">
+      <DependentUpon>Masuk.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Pendaftaran.resx">
+      <DependentUpon>Pendaftaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelamatDatang.resx">
+      <DependentUpon>SelamatDatang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masuk.resx">
+      <DependentUpon>Masuk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
