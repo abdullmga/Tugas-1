@@ -16,11 +16,16 @@ namespace Tugas_1
         {
             InitializeComponent();
         }
+        
+        private string placeholderNamaLengkap = "Masukkan Nama Lengkap";
+        private string placeholderNISUsername = "Masukkan NIS atau Username";
+        private string placeholderKataSandi = "Masukkan Kata Sandi";
 
-        private string placeholderText = "Masukkan Nama Lengkap";
         private void namaLengkap_Enter(object sender, EventArgs e)
         {
-            if (namaLengkap.Text == placeholderText)
+            string namalengkap = namaLengkap.Text;
+
+            if (namaLengkap.Text == placeholderNamaLengkap)
             {
                 namaLengkap.Text = "";
                 namaLengkap.ForeColor = Color.Black;
@@ -31,14 +36,100 @@ namespace Tugas_1
         {
             if (string.IsNullOrWhiteSpace(namaLengkap.Text))
             {
-                namaLengkap.Text = placeholderText;
-                namaLengkap.ForeColor = Color.Gray;
+                namaLengkap.Text = placeholderNamaLengkap;
+                namaLengkap.ForeColor = Color.Silver;
             }
         }
 
         private void Pendaftaran_Load(object sender, EventArgs e)
         {
-            button1.Focus();
+            label1.Focus();
+
+            kataSandi.Text = placeholderKataSandi;
+            kataSandi.ForeColor = Color.Silver;
+            kataSandi.PasswordChar = '\0';
+        }
+
+        private void NISUsername_Enter_1(object sender, EventArgs e)
+        {
+            if (NISUsername.Text == placeholderNISUsername)
+            {
+                NISUsername.Text = "";
+                NISUsername.ForeColor = Color.Black;
+            }
+        }
+
+        private void NISUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(NISUsername.Text))
+            {
+                NISUsername.Text = placeholderNISUsername;
+                NISUsername.ForeColor = Color.Silver;
+            }
+        }
+
+        private void kataSandi_Enter_1(object sender, EventArgs e)
+        {
+            if (kataSandi.Text == placeholderKataSandi)
+            {
+                kataSandi.Text = "";
+                kataSandi.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void kataSandi_Leave_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(kataSandi.Text))
+            {
+                kataSandi.Text = placeholderKataSandi;
+                kataSandi.ForeColor = Color.Silver;
+
+                kataSandi.PasswordChar = '\0';
+            }
+        }
+
+        
+
+        private void btnLanjutkan_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(namaLengkap.Text) || namaLengkap.Text == placeholderNamaLengkap ||
+                string.IsNullOrWhiteSpace(NISUsername.Text) || NISUsername.Text == placeholderNISUsername ||
+                string.IsNullOrWhiteSpace(kataSandi.Text) || kataSandi.Text == placeholderKataSandi)
+            {
+                MessageBox.Show("Harap Isi Seluruh Input Pendaftaran", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information); return;
+            }
+
+            MessageBox.Show("Pendaftaran Berhasil!");
+            
+
+            Masuk FormMasuk = new Masuk();
+            FormMasuk.Show();
+
+            this.Close();
+
+        }
+
+        private void imgView_Click(object sender, EventArgs e)
+        {
+            kataSandi.PasswordChar = '\0';
+
+            imgHide.Visible = true;
+            imgView.Visible = false;
+
+            kataSandi.Focus();
+            kataSandi.SelectionStart = kataSandi.Text.Length;
+        }
+
+        private void imgHide_Click(object sender, EventArgs e)
+        {
+            kataSandi.PasswordChar = '*';
+
+            imgHide.Visible = false;
+            imgView.Visible = true;
+
+            kataSandi.Focus();
+            kataSandi.SelectionStart = kataSandi.Text.Length;
         }
     }
 }

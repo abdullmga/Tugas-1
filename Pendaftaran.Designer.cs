@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLanjutkan = new System.Windows.Forms.Button();
             this.kataSandi = new System.Windows.Forms.TextBox();
             this.namaLengkap = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,6 +37,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NISUsername = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.imgHide = new System.Windows.Forms.PictureBox();
+            this.imgView = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgView)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -50,18 +54,19 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Buat akun baru";
             // 
-            // button1
+            // btnLanjutkan
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(428, 683);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(579, 57);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Lanjutkan";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLanjutkan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnLanjutkan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLanjutkan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLanjutkan.ForeColor = System.Drawing.Color.White;
+            this.btnLanjutkan.Location = new System.Drawing.Point(428, 683);
+            this.btnLanjutkan.Name = "btnLanjutkan";
+            this.btnLanjutkan.Size = new System.Drawing.Size(579, 57);
+            this.btnLanjutkan.TabIndex = 25;
+            this.btnLanjutkan.Text = "Lanjutkan";
+            this.btnLanjutkan.UseVisualStyleBackColor = false;
+            this.btnLanjutkan.Click += new System.EventHandler(this.btnLanjutkan_Click);
             // 
             // kataSandi
             // 
@@ -74,6 +79,9 @@
             this.kataSandi.Size = new System.Drawing.Size(579, 43);
             this.kataSandi.TabIndex = 22;
             this.kataSandi.Tag = "";
+            this.kataSandi.Text = "Masukkan Kata Sandi";
+            this.kataSandi.Enter += new System.EventHandler(this.kataSandi_Enter_1);
+            this.kataSandi.Leave += new System.EventHandler(this.kataSandi_Leave_1);
             // 
             // namaLengkap
             // 
@@ -129,7 +137,9 @@
             this.NISUsername.Name = "NISUsername";
             this.NISUsername.Size = new System.Drawing.Size(579, 43);
             this.NISUsername.TabIndex = 28;
-            this.NISUsername.Text = "Masukkan NIS atau username";
+            this.NISUsername.Text = "Masukkan NIS atau Username";
+            this.NISUsername.Enter += new System.EventHandler(this.NISUsername_Enter_1);
+            this.NISUsername.Leave += new System.EventHandler(this.NISUsername_Leave);
             // 
             // label7
             // 
@@ -141,6 +151,28 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "NIS / Username";
             // 
+            // imgHide
+            // 
+            this.imgHide.Image = global::Tugas_1.Properties.Resources.hide;
+            this.imgHide.Location = new System.Drawing.Point(955, 601);
+            this.imgHide.Name = "imgHide";
+            this.imgHide.Size = new System.Drawing.Size(45, 30);
+            this.imgHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgHide.TabIndex = 36;
+            this.imgHide.TabStop = false;
+            this.imgHide.Click += new System.EventHandler(this.imgHide_Click);
+            // 
+            // imgView
+            // 
+            this.imgView.Image = global::Tugas_1.Properties.Resources.view;
+            this.imgView.Location = new System.Drawing.Point(955, 601);
+            this.imgView.Name = "imgView";
+            this.imgView.Size = new System.Drawing.Size(45, 30);
+            this.imgView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgView.TabIndex = 37;
+            this.imgView.TabStop = false;
+            this.imgView.Click += new System.EventHandler(this.imgView_Click);
+            // 
             // Pendaftaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -150,12 +182,14 @@
             this.Controls.Add(this.NISUsername);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.kataSandi);
+            this.Controls.Add(this.btnLanjutkan);
             this.Controls.Add(this.namaLengkap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.imgHide);
+            this.Controls.Add(this.imgView);
+            this.Controls.Add(this.kataSandi);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1440, 1024);
             this.MinimizeBox = false;
@@ -164,6 +198,8 @@
             this.Text = "Pendaftaran";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pendaftaran_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imgHide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +208,7 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLanjutkan;
         private System.Windows.Forms.TextBox kataSandi;
         private System.Windows.Forms.TextBox namaLengkap;
         private System.Windows.Forms.Label label3;
@@ -180,5 +216,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NISUsername;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox imgHide;
+        private System.Windows.Forms.PictureBox imgView;
     }
 }

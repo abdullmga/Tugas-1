@@ -16,5 +16,23 @@ namespace Tugas_1
         {
             InitializeComponent();
         }
+
+        private void btnMasuk_Click(object sender, EventArgs e)
+        {
+            Masuk FormMasuk = new Masuk();
+
+            FormMasuk.Show();
+
+            this.Hide();
+        }
+
+        private void btnPendaftaran_Click(object sender, EventArgs e)
+        {
+            Pendaftaran FormPendaftaran = new Pendaftaran();
+
+            FormPendaftaran.Show();
+
+            this.Hide();
+        }
     }
 }
