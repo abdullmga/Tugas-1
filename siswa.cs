@@ -12,19 +12,34 @@ namespace Tugas_1
 {
     public partial class siswa : Form
     {
+
         public siswa()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_katalog_Click(object sender, EventArgs e)
         {
+            siswa_katalog katalog = new siswa_katalog();
 
+            katalog.MdiParent = this;
+
+            katalog.Show();
+            katalog.Dock = DockStyle.Fill;
+            katalog.BringToFront();
+            katalog.WindowState = FormWindowState.Maximized;
         }
 
-        private void dashboard_Load(object sender, EventArgs e)
+        private void siswa_Load(object sender, EventArgs e)
         {
+            siswa_katalog katalog = new siswa_katalog();
 
+            katalog.MdiParent = this;
+
+            katalog.Show();
+            katalog.Dock = DockStyle.Fill;
+            katalog.BringToFront();
+            katalog.WindowState = FormWindowState.Maximized;
         }
     }
 }

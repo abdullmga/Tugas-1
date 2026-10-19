@@ -54,6 +54,12 @@
     <Compile Include="siswa-katalog.Designer.cs">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
     </Compile>
+    <Compile Include="siswa-pengajuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="siswa-pengajuan.Designer.cs">
+      <DependentUpon>siswa-pengajuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="siswa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="siswa-katalog.resx">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siswa-pengajuan.resx">
+      <DependentUpon>siswa-pengajuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa.resx">
       <DependentUpon>siswa.cs</DependentUpon>

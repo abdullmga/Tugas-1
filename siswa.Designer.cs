@@ -36,7 +36,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_katalog = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,13 +53,14 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_katalog);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 575);
+            this.panel1.Size = new System.Drawing.Size(210, 573);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -139,22 +140,22 @@
             this.button2.Text = "Pengajuan Saya";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btn_katalog
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(7, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 33);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Katalog Barang";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_katalog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btn_katalog.FlatAppearance.BorderSize = 0;
+            this.btn_katalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_katalog.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_katalog.ForeColor = System.Drawing.Color.White;
+            this.btn_katalog.Location = new System.Drawing.Point(7, 137);
+            this.btn_katalog.Name = "btn_katalog";
+            this.btn_katalog.Size = new System.Drawing.Size(179, 33);
+            this.btn_katalog.TabIndex = 3;
+            this.btn_katalog.Text = "Katalog Barang";
+            this.btn_katalog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_katalog.UseVisualStyleBackColor = false;
+            this.btn_katalog.Click += new System.EventHandler(this.btn_katalog_Click);
             // 
             // label3
             // 
@@ -189,16 +190,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "OSIS Inventaris";
             // 
-            // dashboard
+            // siswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(945, 573);
             this.Controls.Add(this.panel1);
-            this.Name = "dashboard";
+            this.IsMdiContainer = true;
+            this.Name = "siswa";
             this.Text = "dashboard";
-            this.Load += new System.EventHandler(this.dashboard_Load);
+            this.Load += new System.EventHandler(this.siswa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -212,7 +214,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_katalog;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
