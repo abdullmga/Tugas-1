@@ -48,11 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dashboard.cs">
+    <Compile Include="siswa-katalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="siswa-katalog.Designer.cs">
+      <DependentUpon>siswa-katalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="siswa.Designer.cs">
+      <DependentUpon>siswa.cs</DependentUpon>
     </Compile>
     <Compile Include="Pendaftaran.cs">
       <SubType>Form</SubType>
@@ -74,8 +80,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="dashboard.resx">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="siswa-katalog.resx">
+      <DependentUpon>siswa-katalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siswa.resx">
+      <DependentUpon>siswa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pendaftaran.resx">
       <DependentUpon>Pendaftaran.cs</DependentUpon>

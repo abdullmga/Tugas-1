@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Tugas_1
 {
-    public partial class dashboard : Form
+    public partial class siswa_katalog : Form
     {
-        public dashboard()
+        public siswa_katalog()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void dashboard_Load(object sender, EventArgs e)
+        private void siswa_katalog_Load(object sender, EventArgs e)
         {
 
         }
