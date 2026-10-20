@@ -41,5 +41,17 @@ namespace Tugas_1
             katalog.BringToFront();
             katalog.WindowState = FormWindowState.Maximized;
         }
+
+        private void btn_pengajuan_barang_Click(object sender, EventArgs e)
+        {
+            siswa_pengajuan pengajuan = new siswa_pengajuan();
+
+            pengajuan.MdiParent = this;
+
+            pengajuan.Show();
+            pengajuan.Dock = DockStyle.Fill;
+            pengajuan.BringToFront();
+            pengajuan.WindowState = FormWindowState.Maximized;
+        }
     }
 }
