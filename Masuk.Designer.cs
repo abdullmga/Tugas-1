@@ -30,14 +30,22 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.kataSandi = new System.Windows.Forms.TextBox();
+            this.NISUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.daftar = new System.Windows.Forms.Label();
+            this.imgView = new System.Windows.Forms.PictureBox();
+            this.imgHide = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.imgView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHide)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -58,38 +66,40 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(285, 322);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(427, 496);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(344, 20);
             this.label5.TabIndex = 15;
             this.label5.Text = "Lupa kata sandi? Hubungi Pengurus Inventaris.";
             // 
-            // textBox2
+            // kataSandi
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(281, 280);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(387, 29);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Tag = "";
+            this.kataSandi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kataSandi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kataSandi.Location = new System.Drawing.Point(13, 10);
+            this.kataSandi.Multiline = true;
+            this.kataSandi.Name = "kataSandi";
+            this.kataSandi.PasswordChar = '*';
+            this.kataSandi.Size = new System.Drawing.Size(505, 33);
+            this.kataSandi.TabIndex = 13;
+            this.kataSandi.Tag = "";
+            this.kataSandi.Text = "Masukkan Kata Sandi";
+            this.kataSandi.Enter += new System.EventHandler(this.kataSandi_Enter);
+            this.kataSandi.Leave += new System.EventHandler(this.kataSandi_Leave);
             // 
-            // textBox1
+            // NISUsername
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(281, 204);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(387, 29);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "Masukkan NIS atau username";
+            this.NISUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NISUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NISUsername.ForeColor = System.Drawing.Color.Silver;
+            this.NISUsername.Location = new System.Drawing.Point(10, 10);
+            this.NISUsername.Multiline = true;
+            this.NISUsername.Name = "NISUsername";
+            this.NISUsername.Size = new System.Drawing.Size(549, 39);
+            this.NISUsername.TabIndex = 12;
+            this.NISUsername.Text = "Masukkan NIS atau Username";
+            this.NISUsername.Enter += new System.EventHandler(this.NISUsername_Enter);
+            this.NISUsername.Leave += new System.EventHandler(this.NISUsername_Leave);
             // 
             // label3
             // 
@@ -147,36 +157,93 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Belum punya akun? Daftar";
             // 
-            // flowLayoutPanel1
+            // daftar
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(226, 49);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 18;
+            this.daftar.AutoSize = true;
+            this.daftar.BackColor = System.Drawing.Color.Transparent;
+            this.daftar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.daftar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daftar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.daftar.Location = new System.Drawing.Point(771, 665);
+            this.daftar.Name = "daftar";
+            this.daftar.Size = new System.Drawing.Size(76, 29);
+            this.daftar.TabIndex = 33;
+            this.daftar.Text = "Daftar";
+            this.daftar.Click += new System.EventHandler(this.daftar_Click);
+            // 
+            // imgView
+            // 
+            this.imgView.Image = global::Tugas_1.Properties.Resources.view;
+            this.imgView.Location = new System.Drawing.Point(947, 445);
+            this.imgView.Name = "imgView";
+            this.imgView.Size = new System.Drawing.Size(45, 30);
+            this.imgView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgView.TabIndex = 34;
+            this.imgView.TabStop = false;
+            this.imgView.Click += new System.EventHandler(this.imgView_Click);
+            // 
+            // imgHide
+            // 
+            this.imgHide.Image = global::Tugas_1.Properties.Resources.hide;
+            this.imgHide.Location = new System.Drawing.Point(524, 13);
+            this.imgHide.Name = "imgHide";
+            this.imgHide.Size = new System.Drawing.Size(45, 30);
+            this.imgHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgHide.TabIndex = 35;
+            this.imgHide.TabStop = false;
+            this.imgHide.Click += new System.EventHandler(this.imgHide_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.NISUsername);
+            this.panel1.Location = new System.Drawing.Point(422, 314);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(579, 56);
+            this.panel1.TabIndex = 36;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.imgHide);
+            this.panel2.Controls.Add(this.kataSandi);
+            this.panel2.Location = new System.Drawing.Point(422, 431);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(579, 56);
+            this.panel2.TabIndex = 37;
             // 
             // Masuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(945, 573);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1418, 968);
+            this.Controls.Add(this.daftar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.imgView);
+            this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(965, 679);
             this.MinimizeBox = false;
             this.Name = "Masuk";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Masuk";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Masuk_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imgView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHide)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,13 +253,17 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox kataSandi;
+        private System.Windows.Forms.TextBox NISUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label daftar;
+        private System.Windows.Forms.PictureBox imgView;
+        private System.Windows.Forms.PictureBox imgHide;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
