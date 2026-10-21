@@ -31,14 +31,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jumlah_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggal_pinjam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggal_kembali = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_pinjam_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keterangan_pinjam_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +45,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
@@ -84,28 +82,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(686, 313);
             this.dataGridView1.TabIndex = 9;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(34, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(579, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 24);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "+   Ajukan Peminjaman";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // barang
             // 
             this.barang.HeaderText = "Barang";
@@ -136,14 +112,25 @@
             this.keterangan_pinjam_barang.HeaderText = "Keterangan";
             this.keterangan_pinjam_barang.Name = "keterangan_pinjam_barang";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(34, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 8;
+            // 
             // siswa_pengajuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 573);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "siswa_pengajuan";
             this.Text = "siswa_pengajuan";
             this.panel1.ResumeLayout(false);
@@ -160,7 +147,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn jumlah_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggal_pinjam;

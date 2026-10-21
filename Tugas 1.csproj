@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="notifikasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notifikasi.Designer.cs">
+      <DependentUpon>notifikasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="siswa-katalog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="siswa-pengajuan.Designer.cs">
       <DependentUpon>siswa-pengajuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siswa-pinjam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="siswa-pinjam.Designer.cs">
+      <DependentUpon>siswa-pinjam.cs</DependentUpon>
     </Compile>
     <Compile Include="siswa.cs">
       <SubType>Form</SubType>
@@ -86,11 +98,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="notifikasi.resx">
+      <DependentUpon>notifikasi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="siswa-katalog.resx">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa-pengajuan.resx">
       <DependentUpon>siswa-pengajuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siswa-pinjam.resx">
+      <DependentUpon>siswa-pinjam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa.resx">
       <DependentUpon>siswa.cs</DependentUpon>

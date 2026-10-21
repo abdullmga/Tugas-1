@@ -53,5 +53,29 @@ namespace Tugas_1
             pengajuan.BringToFront();
             pengajuan.WindowState = FormWindowState.Maximized;
         }
+
+        private void btn_pinjam_Click(object sender, EventArgs e)
+        {
+            siswa_pinjam pinjam = new siswa_pinjam();
+
+            pinjam.MdiParent = this;
+
+            pinjam.Show();
+            pinjam.Dock = DockStyle.Fill;
+            pinjam.BringToFront();
+            pinjam.WindowState = FormWindowState.Maximized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            notifikasi notif = new notifikasi();
+
+            notif.MdiParent = this;
+
+            notif.Show();
+            notif.Dock = DockStyle.Fill;
+            notif.BringToFront();
+            notif.WindowState = FormWindowState.Maximized;
+        }
     }
 }
