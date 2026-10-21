@@ -23,7 +23,14 @@ namespace Tugas_1
 
             FormMasuk.Show();
 
+            FormMasuk.FormClosed += FormMasuk_FormClosed;
+
             this.Hide();
+        }
+
+        private void FormMasuk_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           this.Close();
         }
 
         private void btnPendaftaran_Click(object sender, EventArgs e)
@@ -32,7 +39,14 @@ namespace Tugas_1
 
             FormPendaftaran.Show();
 
+            FormPendaftaran.FormClosed += FormPendaftaran_FormClosed;
+
             this.Hide();
+        }
+
+        private void FormPendaftaran_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

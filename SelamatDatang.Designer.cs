@@ -40,9 +40,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(500, 89);
+            this.pictureBox2.Location = new System.Drawing.Point(515, 122);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(364, 363);
+            this.pictureBox2.Size = new System.Drawing.Size(339, 323);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -116,6 +116,7 @@
             this.MaximumSize = new System.Drawing.Size(1440, 1024);
             this.MinimizeBox = false;
             this.Name = "SelamatDatang";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selamat Datang";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

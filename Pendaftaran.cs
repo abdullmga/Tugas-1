@@ -48,6 +48,9 @@ namespace Tugas_1
             kataSandi.Text = placeholderKataSandi;
             kataSandi.ForeColor = Color.Silver;
             kataSandi.PasswordChar = '\0';
+
+            imgView.Visible = true;
+            imgHide.Visible = false;
         }
 
         private void NISUsername_Enter_1(object sender, EventArgs e)
@@ -74,6 +77,8 @@ namespace Tugas_1
             {
                 kataSandi.Text = "";
                 kataSandi.ForeColor = Color.Black;
+
+                kataSandi.PasswordChar = '*';
 
             }
         }
@@ -104,32 +109,41 @@ namespace Tugas_1
             
 
             Masuk FormMasuk = new Masuk();
+
             FormMasuk.Show();
 
-            this.Close();
+            FormMasuk.FormClosed += FormMasuk_FormClosed;
 
+            this.Hide();
+
+        }
+
+        private void FormMasuk_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         private void imgView_Click(object sender, EventArgs e)
         {
-            kataSandi.PasswordChar = '\0';
+            if (kataSandi.Text != placeholderKataSandi)
+            {
+                kataSandi.PasswordChar = '\0';
+            }
 
             imgHide.Visible = true;
             imgView.Visible = false;
-
-            kataSandi.Focus();
-            kataSandi.SelectionStart = kataSandi.Text.Length;
         }
 
         private void imgHide_Click(object sender, EventArgs e)
         {
-            kataSandi.PasswordChar = '*';
+            if (kataSandi.Text != placeholderKataSandi)
+            {
+                kataSandi.PasswordChar= '*';
+            }
+            
 
             imgHide.Visible = false;
             imgView.Visible = true;
-
-            kataSandi.Focus();
-            kataSandi.SelectionStart = kataSandi.Text.Length;
         }
     }
 }

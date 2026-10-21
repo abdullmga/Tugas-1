@@ -28,6 +28,10 @@ namespace Tugas_1
             kataSandi.Text = placeholderKataSandi;
             kataSandi.ForeColor = Color.Silver;
             kataSandi.PasswordChar = '\0';
+
+            imgView.Visible = true;
+            imgHide.Visible = false;
+
         }
 
         private void NISUsername_Enter(object sender, EventArgs e)
@@ -71,29 +75,42 @@ namespace Tugas_1
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void imgView_Click(object sender, EventArgs e)
+        {
+            if (kataSandi.Text != placeholderKataSandi)
+            {
+                kataSandi.PasswordChar = '\0';
+            }
+
+            imgHide.Visible = true;
+            imgView.Visible = false;
+        }
+
+        private void imgHide_Click(object sender, EventArgs e)
+        {
+            if (kataSandi.Text != placeholderKataSandi)
+            {
+                kataSandi.PasswordChar = '*';
+            }
+
+            imgHide.Visible = false;
+            imgView.Visible = true;
+        }
+
+        private void daftar_Click(object sender, EventArgs e)
         {
             Pendaftaran FormPendaftaran = new Pendaftaran();
 
             FormPendaftaran.Show();
 
+            FormPendaftaran.FormClosed += FormPendaftaran_FormClosed;
+
+            this.Hide();
+        }
+
+        private void FormPendaftaran_FormClosed(object sender, FormClosedEventArgs e)
+        {
             this.Close();
-        }
-
-        private void imgView_Click(object sender, EventArgs e)
-        {
-            kataSandi.PasswordChar = '\0';
-
-            imgView.Visible = false;
-            imgHide.Visible = true;
-        }
-
-        private void imgHide_Click(object sender, EventArgs e)
-        {
-            kataSandi.PasswordChar = '*';
-
-            imgView.Visible = true;
-            imgHide.Visible = false;
         }
     }
 }
