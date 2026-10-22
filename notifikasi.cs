@@ -16,5 +16,10 @@ namespace Tugas_1
         {
             InitializeComponent();
         }
+
+        private void notifikasi_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
     }
 }

@@ -331,6 +331,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "siswa_pinjam";
             this.Text = "siswa_pinjam";
+            this.Load += new System.EventHandler(this.siswa_pinjam_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

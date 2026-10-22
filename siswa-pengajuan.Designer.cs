@@ -133,6 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "siswa_pengajuan";
             this.Text = "siswa_pengajuan";
+            this.Load += new System.EventHandler(this.siswa_pengajuan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -17,5 +17,9 @@ namespace Tugas_1
             InitializeComponent();
         }
 
+        private void siswa_pengajuan_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
     }
 }

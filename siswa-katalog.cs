@@ -24,7 +24,7 @@ namespace Tugas_1
 
         private void siswa_katalog_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
     }
