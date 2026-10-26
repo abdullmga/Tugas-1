@@ -32,17 +32,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnPendaftaran = new System.Windows.Forms.Button();
+            this.btnMasuk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(500, 89);
+            this.pictureBox2.Location = new System.Drawing.Point(515, 122);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(364, 363);
+            this.pictureBox2.Size = new System.Drawing.Size(339, 323);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -68,34 +68,38 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Aplikasi pengelolaan dan pendataan inventaris OSIS sekolah\r\n";
             // 
-            // button1
+            // btnPendaftaran
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button1.Location = new System.Drawing.Point(702, 600);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 57);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Buat Akun";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnPendaftaran.BackColor = System.Drawing.Color.White;
+            this.btnPendaftaran.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPendaftaran.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnPendaftaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPendaftaran.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPendaftaran.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnPendaftaran.Location = new System.Drawing.Point(702, 600);
+            this.btnPendaftaran.Name = "btnPendaftaran";
+            this.btnPendaftaran.Size = new System.Drawing.Size(266, 57);
+            this.btnPendaftaran.TabIndex = 17;
+            this.btnPendaftaran.Text = "Buat Akun";
+            this.btnPendaftaran.UseVisualStyleBackColor = false;
+            this.btnPendaftaran.Click += new System.EventHandler(this.btnPendaftaran_Click);
             // 
-            // button2
+            // btnMasuk
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(400, 600);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(266, 57);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Masuk";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMasuk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnMasuk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMasuk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnMasuk.FlatAppearance.BorderSize = 0;
+            this.btnMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMasuk.ForeColor = System.Drawing.Color.White;
+            this.btnMasuk.Location = new System.Drawing.Point(400, 600);
+            this.btnMasuk.Name = "btnMasuk";
+            this.btnMasuk.Size = new System.Drawing.Size(266, 57);
+            this.btnMasuk.TabIndex = 18;
+            this.btnMasuk.Text = "Masuk";
+            this.btnMasuk.UseVisualStyleBackColor = false;
+            this.btnMasuk.Click += new System.EventHandler(this.btnMasuk_Click);
             // 
             // SelamatDatang
             // 
@@ -103,8 +107,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1418, 968);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMasuk);
+            this.Controls.Add(this.btnPendaftaran);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -112,6 +116,7 @@
             this.MaximumSize = new System.Drawing.Size(1440, 1024);
             this.MinimizeBox = false;
             this.Name = "SelamatDatang";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selamat Datang";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -126,8 +131,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPendaftaran;
+        private System.Windows.Forms.Button btnMasuk;
     }
 }
 

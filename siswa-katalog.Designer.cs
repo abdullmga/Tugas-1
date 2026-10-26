@@ -47,10 +47,11 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(26, 76);
+            this.textBox1.Location = new System.Drawing.Point(39, 117);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 21);
+            this.textBox1.Size = new System.Drawing.Size(360, 31);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Cari nama barang...";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -60,8 +61,9 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 52);
+            this.panel1.Size = new System.Drawing.Size(1104, 80);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -69,9 +71,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 24);
+            this.label1.Size = new System.Drawing.Size(216, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Katalog Barang";
             // 
@@ -82,9 +85,10 @@
             "Baik",
             "Rusak Ringan",
             "Rusak"});
-            this.comboBox1.Location = new System.Drawing.Point(294, 76);
+            this.comboBox1.Location = new System.Drawing.Point(441, 117);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(180, 28);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Semua kondisi";
             // 
@@ -92,9 +96,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(35, 80);
+            this.label2.Location = new System.Drawing.Point(52, 123);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 3;
             // 
             // dataGridView1
@@ -110,49 +115,64 @@
             this.status_barang,
             this.aksi_barang});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 171);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(686, 313);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(1029, 482);
             this.dataGridView1.TabIndex = 4;
             // 
             // nama_barang
             // 
             this.nama_barang.HeaderText = "Nama Barang";
+            this.nama_barang.MinimumWidth = 8;
             this.nama_barang.Name = "nama_barang";
             // 
             // stok_barang
             // 
             this.stok_barang.HeaderText = "Stok";
+            this.stok_barang.MinimumWidth = 8;
             this.stok_barang.Name = "stok_barang";
             // 
             // kondisi_barang
             // 
             this.kondisi_barang.HeaderText = "Kondisi";
+            this.kondisi_barang.MinimumWidth = 8;
             this.kondisi_barang.Name = "kondisi_barang";
             // 
             // status_barang
             // 
             this.status_barang.HeaderText = "Status";
+            this.status_barang.MinimumWidth = 8;
             this.status_barang.Name = "status_barang";
             // 
             // aksi_barang
             // 
             this.aksi_barang.HeaderText = "Aksi";
+            this.aksi_barang.MinimumWidth = 8;
             this.aksi_barang.Name = "aksi_barang";
             // 
             // siswa_katalog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 573);
+            this.ClientSize = new System.Drawing.Size(1436, 1014);
+            this.ControlBox = false;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1436, 1014);
+            this.MinimizeBox = false;
             this.Name = "siswa_katalog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "siswa_katalog";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.siswa_katalog_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
