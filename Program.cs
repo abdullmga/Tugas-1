@@ -16,7 +16,7 @@ namespace Tugas_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new siswa_katalog());
+            Application.Run(new SelamatDatang());
         }
     }
 }
