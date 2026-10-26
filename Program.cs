@@ -17,6 +17,7 @@ namespace Tugas_1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SelamatDatang());
+
         }
     }
 }

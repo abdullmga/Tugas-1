@@ -34,32 +34,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_pinjam = new System.Windows.Forms.Button();
+            this.btn_pengajuan_barang = new System.Windows.Forms.Button();
+            this.btn_katalog = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_pinjam);
+            this.panel1.Controls.Add(this.btn_pengajuan_barang);
+            this.panel1.Controls.Add(this.btn_katalog);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 575);
+            this.panel1.Size = new System.Drawing.Size(210, 573);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -110,51 +113,53 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(181, 1);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
-            // button3
+            // btn_pinjam
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(7, 215);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 33);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Notifikasi";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_pinjam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btn_pinjam.FlatAppearance.BorderSize = 0;
+            this.btn_pinjam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pinjam.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pinjam.ForeColor = System.Drawing.Color.White;
+            this.btn_pinjam.Location = new System.Drawing.Point(7, 215);
+            this.btn_pinjam.Name = "btn_pinjam";
+            this.btn_pinjam.Size = new System.Drawing.Size(179, 33);
+            this.btn_pinjam.TabIndex = 5;
+            this.btn_pinjam.Text = "Ajukan Peminjaman";
+            this.btn_pinjam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pinjam.UseVisualStyleBackColor = false;
+            this.btn_pinjam.Click += new System.EventHandler(this.btn_pinjam_Click);
             // 
-            // button2
+            // btn_pengajuan_barang
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(7, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 33);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Pengajuan Saya";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_pengajuan_barang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btn_pengajuan_barang.FlatAppearance.BorderSize = 0;
+            this.btn_pengajuan_barang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pengajuan_barang.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pengajuan_barang.ForeColor = System.Drawing.Color.White;
+            this.btn_pengajuan_barang.Location = new System.Drawing.Point(7, 176);
+            this.btn_pengajuan_barang.Name = "btn_pengajuan_barang";
+            this.btn_pengajuan_barang.Size = new System.Drawing.Size(179, 33);
+            this.btn_pengajuan_barang.TabIndex = 4;
+            this.btn_pengajuan_barang.Text = "Pengajuan Saya";
+            this.btn_pengajuan_barang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pengajuan_barang.UseVisualStyleBackColor = false;
+            this.btn_pengajuan_barang.Click += new System.EventHandler(this.btn_pengajuan_barang_Click);
             // 
-            // button1
+            // btn_katalog
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(7, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 33);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Katalog Barang";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_katalog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btn_katalog.FlatAppearance.BorderSize = 0;
+            this.btn_katalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_katalog.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_katalog.ForeColor = System.Drawing.Color.White;
+            this.btn_katalog.Location = new System.Drawing.Point(7, 137);
+            this.btn_katalog.Name = "btn_katalog";
+            this.btn_katalog.Size = new System.Drawing.Size(179, 33);
+            this.btn_katalog.TabIndex = 3;
+            this.btn_katalog.Text = "Katalog Barang";
+            this.btn_katalog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_katalog.UseVisualStyleBackColor = false;
+            this.btn_katalog.Click += new System.EventHandler(this.btn_katalog_Click);
             // 
             // label3
             // 
@@ -189,16 +194,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "OSIS Inventaris";
             // 
-            // dashboard
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(7, 254);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 33);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Notifikasi";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // siswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(945, 573);
             this.Controls.Add(this.panel1);
-            this.Name = "dashboard";
+            this.IsMdiContainer = true;
+            this.Name = "siswa";
             this.Text = "dashboard";
-            this.Load += new System.EventHandler(this.dashboard_Load);
+            this.Load += new System.EventHandler(this.siswa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -211,13 +233,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_pengajuan_barang;
+        private System.Windows.Forms.Button btn_katalog;
+        private System.Windows.Forms.Button btn_pinjam;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }

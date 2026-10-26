@@ -12,19 +12,70 @@ namespace Tugas_1
 {
     public partial class siswa : Form
     {
+
         public siswa()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_katalog_Click(object sender, EventArgs e)
         {
+            siswa_katalog katalog = new siswa_katalog();
 
+            katalog.MdiParent = this;
+
+            katalog.Show();
+            katalog.Dock = DockStyle.Fill;
+            katalog.BringToFront();
+            katalog.WindowState = FormWindowState.Maximized;
         }
 
-        private void dashboard_Load(object sender, EventArgs e)
+        private void siswa_Load(object sender, EventArgs e)
         {
+            siswa_katalog katalog = new siswa_katalog();
 
+            katalog.MdiParent = this;
+
+            katalog.Show();
+            katalog.Dock = DockStyle.Fill;
+            katalog.BringToFront();
+            katalog.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btn_pengajuan_barang_Click(object sender, EventArgs e)
+        {
+            siswa_pengajuan pengajuan = new siswa_pengajuan();
+
+            pengajuan.MdiParent = this;
+
+            pengajuan.Show();
+            pengajuan.Dock = DockStyle.Fill;
+            pengajuan.BringToFront();
+            pengajuan.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btn_pinjam_Click(object sender, EventArgs e)
+        {
+            siswa_pinjam pinjam = new siswa_pinjam();
+
+            pinjam.MdiParent = this;
+
+            pinjam.Show();
+            pinjam.Dock = DockStyle.Fill;
+            pinjam.BringToFront();
+            pinjam.WindowState = FormWindowState.Maximized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            notifikasi notif = new notifikasi();
+
+            notif.MdiParent = this;
+
+            notif.Show();
+            notif.Dock = DockStyle.Fill;
+            notif.BringToFront();
+            notif.WindowState = FormWindowState.Maximized;
         }
     }
 }
