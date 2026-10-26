@@ -20,62 +20,88 @@ namespace Tugas_1
 
         private void btn_katalog_Click(object sender, EventArgs e)
         {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+
             siswa_katalog katalog = new siswa_katalog();
 
             katalog.MdiParent = this;
+            katalog.FormBorderStyle = FormBorderStyle.None; 
+            katalog.Dock = DockStyle.Fill;                  
 
             katalog.Show();
-            katalog.Dock = DockStyle.Fill;
             katalog.BringToFront();
-            katalog.WindowState = FormWindowState.Maximized;
         }
 
         private void siswa_Load(object sender, EventArgs e)
         {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+
             siswa_katalog katalog = new siswa_katalog();
 
             katalog.MdiParent = this;
+            katalog.FormBorderStyle = FormBorderStyle.None;
+            katalog.Dock = DockStyle.Fill;
 
             katalog.Show();
-            katalog.Dock = DockStyle.Fill;
             katalog.BringToFront();
-            katalog.WindowState = FormWindowState.Maximized;
         }
 
         private void btn_pengajuan_barang_Click(object sender, EventArgs e)
         {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
             siswa_pengajuan pengajuan = new siswa_pengajuan();
 
             pengajuan.MdiParent = this;
+            pengajuan.FormBorderStyle = FormBorderStyle.None;
+            pengajuan.Dock = DockStyle.Fill;
 
             pengajuan.Show();
-            pengajuan.Dock = DockStyle.Fill;
             pengajuan.BringToFront();
-            pengajuan.WindowState = FormWindowState.Maximized;
+            
         }
 
         private void btn_pinjam_Click(object sender, EventArgs e)
         {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
             siswa_pinjam pinjam = new siswa_pinjam();
 
             pinjam.MdiParent = this;
+            pinjam.FormBorderStyle = FormBorderStyle.None;
+            pinjam.Dock = DockStyle.Fill;
 
             pinjam.Show();
-            pinjam.Dock = DockStyle.Fill;
             pinjam.BringToFront();
-            pinjam.WindowState = FormWindowState.Maximized;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+
             notifikasi notif = new notifikasi();
 
             notif.MdiParent = this;
+            notif.FormBorderStyle = FormBorderStyle.None;
+            notif.Dock = DockStyle.Fill;
 
             notif.Show();
-            notif.Dock = DockStyle.Fill;
             notif.BringToFront();
-            notif.WindowState = FormWindowState.Maximized;
+
         }
     }
 }
