@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Tugas_1
 {
     public partial class siswa : Form
     {
 
-        public siswa()
+        public siswa(string namaUser)
         {
             InitializeComponent();
+
+            namaPengguna.Text = namaUser;
         }
 
         private void btn_katalog_Click(object sender, EventArgs e)

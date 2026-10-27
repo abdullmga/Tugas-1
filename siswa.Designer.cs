@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.namaPengguna = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_pinjam = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.namaPengguna);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.btn_pinjam);
@@ -103,17 +103,17 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Keluar";
             // 
-            // label5
+            // namaPengguna
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(9, 754);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(293, 23);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Abdullah Muqbil Ghanim Alghanim";
+            this.namaPengguna.AutoSize = true;
+            this.namaPengguna.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namaPengguna.ForeColor = System.Drawing.Color.White;
+            this.namaPengguna.Location = new System.Drawing.Point(9, 754);
+            this.namaPengguna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.namaPengguna.Name = "namaPengguna";
+            this.namaPengguna.Size = new System.Drawing.Size(293, 23);
+            this.namaPengguna.TabIndex = 8;
+            this.namaPengguna.Text = "Abdullah Muqbil Ghanim Alghanim";
             // 
             // label4
             // 
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Button btn_pengajuan_barang;
         private System.Windows.Forms.Button btn_katalog;
         private System.Windows.Forms.Button btn_pinjam;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label namaPengguna;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

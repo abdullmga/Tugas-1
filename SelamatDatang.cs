@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Tugas_1
 {
@@ -47,6 +49,25 @@ namespace Tugas_1
         private void FormPendaftaran_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DatabaseConnection db = new DatabaseConnection();
+
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+
+                    MessageBox.Show("Berhasil terhubung ke database");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal terhubung ke database" + ex.Message);
+            }
         }
     }
 }

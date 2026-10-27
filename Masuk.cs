@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Tugas_1
 {
@@ -17,7 +19,7 @@ namespace Tugas_1
             InitializeComponent();
         }
 
-        private string placeholderNISUsername = "Masukkan NIS atau Username";
+        private string placeholderNISUsername = "Masukkan Username";
         private string placeholderKataSandi = "Masukkan Kata Sandi";
 
 
@@ -109,6 +111,71 @@ namespace Tugas_1
         }
 
         private void FormPendaftaran_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMasuk_Click(object sender, EventArgs e)
+        {
+            string username = NISUsername.Text;
+            string katasandi = kataSandi.Text;
+
+            if (string.IsNullOrWhiteSpace(username) || username == placeholderNISUsername ||
+                string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
+            {
+                MessageBox.Show("Harap Isi Seluruh Input Masuk", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                return;
+            }
+
+            string query = @"SELECT id_user, nama_user, role  FROM `USER` WHERE username=@username AND password=@password";
+
+            try
+            {
+                DatabaseConnection db = new DatabaseConnection();
+
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username",username);
+                        cmd.Parameters.AddWithValue("@password",katasandi);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader()) 
+                        {
+                            if (reader.Read()) 
+                            {
+                                string namaUser = reader.GetString("nama_user");
+                                string role = reader.GetString("role");
+
+                                MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
+
+                                siswa FormSiswa = new siswa(namaUser);
+
+                                FormSiswa.Show();
+
+                                FormSiswa.FormClosed += FormSiswa_FormClosed;
+
+                                this.Hide();
+
+
+                            } else
+                            {
+                                MessageBox.Show("Username atau kata sandi salah!");
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Terjadi kesalahan database: " + ex.Message);
+            }
+        }
+
+        private void FormSiswa_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }

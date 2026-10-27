@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Tugas_1
 {
@@ -94,28 +96,73 @@ namespace Tugas_1
             }
         }
 
-        
+
 
         private void btnLanjutkan_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(namaLengkap.Text) || namaLengkap.Text == placeholderNamaLengkap ||
-                string.IsNullOrWhiteSpace(NISUsername.Text) || NISUsername.Text == placeholderNISUsername ||
-                string.IsNullOrWhiteSpace(kataSandi.Text) || kataSandi.Text == placeholderKataSandi)
+            string namalengkap = namaLengkap.Text;
+            string nisusername = NISUsername.Text;
+            string katasandi = kataSandi.Text;
+
+
+            if (string.IsNullOrWhiteSpace(namalengkap) || namalengkap == placeholderNamaLengkap ||
+                string.IsNullOrWhiteSpace(nisusername) || nisusername == placeholderNISUsername ||
+                string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
             {
                 MessageBox.Show("Harap Isi Seluruh Input Pendaftaran", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information); return;
             }
+            string query = @"INSERT INTO `USER` (nama_user, username, password, role) VALUES (@nama_user, @username, @password, @role)";
+            try
+            {
+                DatabaseConnection db = new DatabaseConnection();
 
-            MessageBox.Show("Pendaftaran Berhasil!");
-            
+                using (MySqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
 
-            Masuk FormMasuk = new Masuk();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@nama_user", namalengkap);
+                        cmd.Parameters.AddWithValue("@username", nisusername);
+                        cmd.Parameters.AddWithValue("@password", katasandi);
+                        cmd.Parameters.AddWithValue("@role", "user");
 
-            FormMasuk.Show();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
 
-            FormMasuk.FormClosed += FormMasuk_FormClosed;
+                MessageBox.Show("Pendaftaran Berhasil!");
 
-            this.Hide();
+                Masuk FormMasuk = new Masuk();
 
+                FormMasuk.Show();
+
+                FormMasuk.FormClosed += FormMasuk_FormClosed;
+
+                this.Hide();
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1062)
+                {
+                    MessageBox.Show(
+                        "Username sudah digunakan! Silakan pilih username lain.",
+                        "Pendaftaran Gagal",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Pendaftaran gagal: " + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+                return;
+            }
         }
 
         private void FormMasuk_FormClosed(object sender, FormClosedEventArgs e)
