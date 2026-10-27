@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPendaftaran = new System.Windows.Forms.Button();
             this.btnMasuk = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,12 +102,23 @@
             this.btnMasuk.UseVisualStyleBackColor = false;
             this.btnMasuk.Click += new System.EventHandler(this.btnMasuk_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(236, 277);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 75);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "TES KONEKSI";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SelamatDatang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1418, 968);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMasuk);
             this.Controls.Add(this.btnPendaftaran);
             this.Controls.Add(this.label2);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPendaftaran;
         private System.Windows.Forms.Button btnMasuk;
+        private System.Windows.Forms.Button button1;
     }
 }
 

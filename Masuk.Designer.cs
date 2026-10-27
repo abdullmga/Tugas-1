@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnMasuk = new System.Windows.Forms.Button();
             this.kataSandi = new System.Windows.Forms.TextBox();
             this.NISUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,29 +48,19 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnMasuk
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(418, 542);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(583, 57);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Masuk";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(475, 658);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(511, 29);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Lupa kata sandi? Hubungi Pengurus Inventaris.";
+            this.btnMasuk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMasuk.ForeColor = System.Drawing.Color.White;
+            this.btnMasuk.Location = new System.Drawing.Point(418, 542);
+            this.btnMasuk.Name = "btnMasuk";
+            this.btnMasuk.Size = new System.Drawing.Size(583, 57);
+            this.btnMasuk.TabIndex = 16;
+            this.btnMasuk.Text = "Masuk";
+            this.btnMasuk.UseVisualStyleBackColor = false;
+            this.btnMasuk.Click += new System.EventHandler(this.btnMasuk_Click);
             // 
             // kataSandi
             // 
@@ -100,7 +89,7 @@
             this.NISUsername.Name = "NISUsername";
             this.NISUsername.Size = new System.Drawing.Size(685, 42);
             this.NISUsername.TabIndex = 12;
-            this.NISUsername.Text = "Masukkan NIS atau Username";
+            this.NISUsername.Text = "Masukkan Username";
             this.NISUsername.Enter += new System.EventHandler(this.NISUsername_Enter);
             this.NISUsername.Leave += new System.EventHandler(this.NISUsername_Leave);
             // 
@@ -120,9 +109,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(417, 282);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 29);
+            this.label2.Size = new System.Drawing.Size(124, 29);
             this.label2.TabIndex = 10;
-            this.label2.Text = "NIS / Username";
+            this.label2.Text = "Username";
             // 
             // label1
             // 
@@ -234,8 +223,7 @@
             this.ClientSize = new System.Drawing.Size(1414, 958);
             this.Controls.Add(this.daftar);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnMasuk);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -265,8 +253,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnMasuk;
         private System.Windows.Forms.TextBox kataSandi;
         private System.Windows.Forms.TextBox NISUsername;
         private System.Windows.Forms.Label label3;
