@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelKeluar = new System.Windows.Forms.Label();
             this.namaPengguna = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -49,7 +49,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelKeluar);
             this.panel1.Controls.Add(this.namaPengguna);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
@@ -91,17 +91,18 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(286, 80);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // label6
+            // labelKeluar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.LightCoral;
-            this.label6.Location = new System.Drawing.Point(9, 818);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 22);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Keluar";
+            this.labelKeluar.AutoSize = true;
+            this.labelKeluar.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKeluar.ForeColor = System.Drawing.Color.LightCoral;
+            this.labelKeluar.Location = new System.Drawing.Point(9, 818);
+            this.labelKeluar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelKeluar.Name = "labelKeluar";
+            this.labelKeluar.Size = new System.Drawing.Size(52, 22);
+            this.labelKeluar.TabIndex = 9;
+            this.labelKeluar.Text = "Keluar";
+            this.labelKeluar.Click += new System.EventHandler(this.labelKeluar_Click);
             // 
             // namaPengguna
             // 
@@ -258,7 +259,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelKeluar;
         private System.Windows.Forms.Button button1;
     }
 }

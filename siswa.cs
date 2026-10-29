@@ -106,5 +106,29 @@ namespace Tugas_1
             notif.BringToFront();
 
         }
+
+        private void labelKeluar_Click(object sender, EventArgs e)
+        {
+            DialogResult hasil = MessageBox.Show("Apakah yakin kamu mau kelauar?", "Konfirmasi keluar",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (hasil == DialogResult.Yes)
+            {
+                Masuk FormMasuk = new Masuk();
+
+                FormMasuk.Show();
+
+                FormMasuk.FormClosed += KembaliKeFormMasuk_FormClosed;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void KembaliKeFormMasuk_FormClosed(object sender, FormClosedEventArgs e)
+        {            
+            this.Close();
+        }
     }
 }

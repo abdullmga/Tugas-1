@@ -94,12 +94,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pembina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pembina.Designer.cs">
+      <DependentUpon>pembina.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="notifikasi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="notifikasi.Designer.cs">
       <DependentUpon>notifikasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pengurus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pengurus.Designer.cs">
+      <DependentUpon>pengurus.cs</DependentUpon>
     </Compile>
     <Compile Include="siswa-katalog.cs">
       <SubType>Form</SubType>
@@ -145,8 +157,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="pembina.resx">
+      <DependentUpon>pembina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="notifikasi.resx">
       <DependentUpon>notifikasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pengurus.resx">
+      <DependentUpon>pengurus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa-katalog.resx">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
