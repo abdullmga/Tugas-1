@@ -103,9 +103,9 @@ namespace Tugas_1
         {
             Pendaftaran FormPendaftaran = new Pendaftaran();
 
-            FormPendaftaran.Show();
-
             FormPendaftaran.FormClosed += FormPendaftaran_FormClosed;
+
+            FormPendaftaran.Show();
 
             this.Hide();
         }
@@ -149,16 +149,43 @@ namespace Tugas_1
                                 string namaUser = reader.GetString("nama_user");
                                 string role = reader.GetString("role");
 
-                                MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
+                                if (role == "siswa")
+                                {
+                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
 
-                                siswa FormSiswa = new siswa(namaUser);
+                                    siswa FormSiswa = new siswa(namaUser);
 
-                                FormSiswa.Show();
+                                    FormSiswa.FormClosed += FormSiswa_FormClosed;
 
-                                FormSiswa.FormClosed += FormSiswa_FormClosed;
+                                    FormSiswa.Show();
 
-                                this.Hide();
+                                    this.Hide();
+                                }
+                                else if (role == "pengurus")
+                                {
+                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
 
+                                    pengurus FormPengurus = new pengurus(namaUser);
+
+                                    FormPengurus.FormClosed += FormPengurus_FormClosed;
+
+                                    FormPengurus.Show();
+
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
+
+                                    pembina FormPembina = new pembina(namaUser);
+
+                                    FormPembina.FormClosed += FormPembina_FormClosed;
+
+                                    FormPembina.Show();
+
+                                    this.Hide();
+
+                                }
 
                             } else
                             {
@@ -173,6 +200,16 @@ namespace Tugas_1
             {
                 MessageBox.Show("Terjadi kesalahan database: " + ex.Message);
             }
+        }
+
+        private void FormPembina_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormPengurus_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         private void FormSiswa_FormClosed(object sender, FormClosedEventArgs e)

@@ -125,7 +125,7 @@ namespace Tugas_1
                         cmd.Parameters.AddWithValue("@nama_user", namalengkap);
                         cmd.Parameters.AddWithValue("@username", nisusername);
                         cmd.Parameters.AddWithValue("@password", katasandi);
-                        cmd.Parameters.AddWithValue("@role", "user");
+                        cmd.Parameters.AddWithValue("@role", "pengurus");
 
                         cmd.ExecuteNonQuery();
                     }
