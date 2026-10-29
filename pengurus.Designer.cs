@@ -207,7 +207,7 @@
             this.Role.AutoSize = true;
             this.Role.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Role.ForeColor = System.Drawing.Color.White;
-            this.Role.Location = new System.Drawing.Point(9, 183);
+            this.Role.Location = new System.Drawing.Point(14, 184);
             this.Role.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Role.Name = "Role";
             this.Role.Size = new System.Drawing.Size(95, 22);
