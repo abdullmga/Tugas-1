@@ -24,7 +24,7 @@ CREATE TABLE `USER`(
     `nama_user` VARCHAR(100) NOT NULL,
     `username` VARCHAR(30) NOT NULL,
     `password` VARCHAR(10) NOT NULL,
-    `role` ENUM('siswa', 'admin', 'pengurus') NOT NULL DEFAULT 'siswa'
+    `role` ENUM('siswa', 'pembina', 'pengurus') NOT NULL DEFAULT 'siswa'
 );
 
 CREATE TABLE `PEMINJAMAN`(
