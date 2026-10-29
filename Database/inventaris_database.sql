@@ -38,16 +38,8 @@ CREATE TABLE `USER` (
     `nama_user` VARCHAR(100) NOT NULL,
     `username` VARCHAR(30) NOT NULL,
     `password` VARCHAR(10) NOT NULL,
-    `role` ENUM('siswa', 'pembina', 'pengurus') NOT NULL DEFAULT 'siswa',
-
-    PRIMARY KEY (`id_user`),
-    UNIQUE KEY `uk_user_username` (`username`)
-) ENGINE=InnoDB;
-
-
--- =========================================================
--- TABLE PEMINJAMAN
--- =========================================================
+    `role` ENUM('siswa', 'pembina', 'pengurus') NOT NULL DEFAULT 'siswa'
+);
 
 CREATE TABLE `PEMINJAMAN` (
     `id_peminjaman` INT UNSIGNED NOT NULL AUTO_INCREMENT,
