@@ -207,7 +207,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 183);
+            this.label3.Location = new System.Drawing.Point(14, 184);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 22);
@@ -249,6 +249,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1436, 1014);
             this.Name = "pembina";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pembina";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

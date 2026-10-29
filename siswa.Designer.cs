@@ -193,7 +193,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 183);
+            this.label3.Location = new System.Drawing.Point(14, 184);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 22);
@@ -237,6 +237,7 @@
             this.MaximumSize = new System.Drawing.Size(1436, 1014);
             this.MinimizeBox = false;
             this.Name = "siswa";
+            this.ShowIcon = false;
             this.Text = "dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.siswa_Load);

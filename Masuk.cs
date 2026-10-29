@@ -123,7 +123,10 @@ namespace Tugas_1
             if (string.IsNullOrWhiteSpace(username) || username == placeholderNISUsername ||
                 string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
             {
-                MessageBox.Show("Harap Isi Seluruh Input Masuk", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                MessageBox.Show("Harap Isi Seluruh Input Masuk",
+                    "Peringatan",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information); 
                 return;
             }
 

@@ -20,13 +20,13 @@ namespace Tugas_1
         }
         
         private string placeholderNamaLengkap = "Masukkan Nama Lengkap";
-        private string placeholderNISUsername = "Masukkan NIS atau Username";
+        private string placeholderNISN = "Masukkan NISN";
+        private string placeholderUsername = "Masukkan Username";
         private string placeholderKataSandi = "Masukkan Kata Sandi";
+        private string placeholderUlangKataSandi = "Masukkan Kata Sandi Lagi";
 
         private void namaLengkap_Enter(object sender, EventArgs e)
         {
-            string namalengkap = namaLengkap.Text;
-
             if (namaLengkap.Text == placeholderNamaLengkap)
             {
                 namaLengkap.Text = "";
@@ -51,26 +51,16 @@ namespace Tugas_1
             kataSandi.ForeColor = Color.Silver;
             kataSandi.PasswordChar = '\0';
 
+            UlangiKataSandi.Text = placeholderUlangKataSandi;
+            UlangiKataSandi.ForeColor = Color.Silver;
+            UlangiKataSandi.PasswordChar = '\0';
+            
+
             imgView.Visible = true;
             imgHide.Visible = false;
-        }
 
-        private void NISUsername_Enter_1(object sender, EventArgs e)
-        {
-            if (NISUsername.Text == placeholderNISUsername)
-            {
-                NISUsername.Text = "";
-                NISUsername.ForeColor = Color.Black;
-            }
-        }
-
-        private void NISUsername_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(NISUsername.Text))
-            {
-                NISUsername.Text = placeholderNISUsername;
-                NISUsername.ForeColor = Color.Silver;
-            }
+            imgView1.Visible = true;
+            imgHide1.Visible = false;
         }
 
         private void kataSandi_Enter_1(object sender, EventArgs e)
@@ -96,22 +86,39 @@ namespace Tugas_1
             }
         }
 
-
-
         private void btnLanjutkan_Click(object sender, EventArgs e)
         {
             string namalengkap = namaLengkap.Text;
-            string nisusername = NISUsername.Text;
+            string nisn = NISN.Text;
+            string username = Username.Text;
             string katasandi = kataSandi.Text;
+            string ulangikatasandi = UlangiKataSandi.Text;
 
-
-            if (string.IsNullOrWhiteSpace(namalengkap) || namalengkap == placeholderNamaLengkap ||
-                string.IsNullOrWhiteSpace(nisusername) || nisusername == placeholderNISUsername ||
-                string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
+                    if (string.IsNullOrWhiteSpace(namalengkap) || namalengkap == placeholderNamaLengkap ||
+                    string.IsNullOrWhiteSpace(username) || username == placeholderUsername ||
+                    string.IsNullOrWhiteSpace(nisn) || nisn == placeholderNISN ||
+                    string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi ||
+                    string.IsNullOrWhiteSpace(ulangikatasandi) || ulangikatasandi == placeholderUlangKataSandi)
+                    {
+                        MessageBox.Show("Harap Isi Seluruh Input Pendaftaran!", 
+                            "Peringatan", 
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Information); 
+                        return;
+                    }
+                
+            if (nisn.Length != 10)
             {
-                MessageBox.Show("Harap Isi Seluruh Input Pendaftaran", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Information); return;
+                MessageBox.Show("NISN wajib berjumlah 10 digit!"); 
+                return;
             }
-            string query = @"INSERT INTO `USER` (nama_user, username, password, role) VALUES (@nama_user, @username, @password, @role)";
+            if (katasandi != ulangikatasandi)
+            {
+                MessageBox.Show("Password tidak sama!");
+                return;
+            }
+
+            string query = @"INSERT INTO `USER` (nama_user, nisn, username, password, role) VALUES (@nama_user, @nisn, @username, @password, @role)";
             try
             {
                 DatabaseConnection db = new DatabaseConnection();
@@ -123,9 +130,10 @@ namespace Tugas_1
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@nama_user", namalengkap);
-                        cmd.Parameters.AddWithValue("@username", nisusername);
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@nisn", nisn);
                         cmd.Parameters.AddWithValue("@password", katasandi);
-                        cmd.Parameters.AddWithValue("@role", "pengurus");
+                        cmd.Parameters.AddWithValue("@role", "siswa");
 
                         cmd.ExecuteNonQuery();
                     }
@@ -135,9 +143,9 @@ namespace Tugas_1
 
                 Masuk FormMasuk = new Masuk();
 
-                FormMasuk.Show();
-
                 FormMasuk.FormClosed += FormMasuk_FormClosed;
+
+                FormMasuk.Show();
 
                 this.Hide();
             }
@@ -191,6 +199,94 @@ namespace Tugas_1
 
             imgHide.Visible = false;
             imgView.Visible = true;
+        }
+
+        private void NISN_Enter(object sender, EventArgs e)
+        {
+            if (NISN.Text == placeholderNISN)
+            {
+                NISN.Text = "";
+                NISN.ForeColor = Color.Black;
+            }
+        }
+
+        private void NISN_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(NISN.Text))
+            {
+                NISN.Text = placeholderNISN;
+                NISN.ForeColor = Color.Silver;
+            }
+        }
+
+        private void UlangiKataSandi_Enter(object sender, EventArgs e)
+        {
+            if (UlangiKataSandi.Text == placeholderUlangKataSandi)
+            {
+                UlangiKataSandi.Text = "";
+                UlangiKataSandi.ForeColor = Color.Black;
+
+                UlangiKataSandi.PasswordChar = '*';
+            }
+        }
+
+        private void UlangiKataSandi_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(UlangiKataSandi.Text))
+            {
+                UlangiKataSandi.Text = placeholderUlangKataSandi;
+                UlangiKataSandi.ForeColor = Color.Silver;
+
+                UlangiKataSandi.PasswordChar = '\0';
+            }
+        }
+
+        private void imgView1_Click(object sender, EventArgs e)
+        {
+            if (UlangiKataSandi.Text != placeholderUlangKataSandi)
+            {
+                UlangiKataSandi.PasswordChar = '\0';
+
+                imgHide1.Visible = true;
+                imgView1.Visible = false;
+            }
+        }
+
+        private void imgHide1_Click(object sender, EventArgs e)
+        {
+            if (UlangiKataSandi.Text != placeholderUlangKataSandi)
+            {
+                UlangiKataSandi.PasswordChar = '*';
+
+                imgHide1.Visible = false;
+                imgView1.Visible = true;
+            }
+        }
+
+        private void Username_Enter(object sender, EventArgs e)
+        {
+            if (Username.Text == placeholderUsername)
+            {
+                Username.Text = "";
+                Username.ForeColor = Color.Black;
+            }
+        }
+
+        private void Username_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Username.Text))
+            {
+                Username.Text = placeholderUsername;
+                Username.ForeColor = Color.Silver;
+            }
+        }
+
+        private void NISN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

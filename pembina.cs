@@ -24,16 +24,21 @@ namespace Tugas_1
 
         private void labelKeluar_Click(object sender, EventArgs e)
         {
-            DialogResult hasil = MessageBox.Show("Apakah yakin kamu mau kelauar?", "Konfirmasi keluar",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult hasil = MessageBox.Show
+                ("Apakah yakin kamu mau kelauar?", 
+                "Konfirmasi keluar",
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
 
             if (hasil == DialogResult.Yes)
             {
                 Masuk FormMasuk = new Masuk();
 
+                FormMasuk.FormClosed += FormMasuk_FormClosed;
+
                 FormMasuk.Show();
 
-                FormMasuk.FormClosed += FormMasuk_FormClosed;
+                this.Hide();
             }
             else
             {
