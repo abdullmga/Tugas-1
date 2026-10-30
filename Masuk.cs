@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using BCrypt.Net;
 
 
 namespace Tugas_1
@@ -119,6 +120,7 @@ namespace Tugas_1
         {
             string username = NISUsername.Text;
             string katasandi = kataSandi.Text;
+            
 
             if (string.IsNullOrWhiteSpace(username) || username == placeholderNISUsername ||
                 string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
@@ -128,9 +130,10 @@ namespace Tugas_1
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information); 
                 return;
-            }
 
-            string query = @"SELECT id_user, nama_user, role  FROM `USER` WHERE username=@username AND password=@password";
+            }
+            
+            string query = @"SELECT id_user, nama_user, role  FROM `USER` WHERE username=@username";
 
             try
             {
@@ -143,56 +146,66 @@ namespace Tugas_1
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@username",username);
-                        cmd.Parameters.AddWithValue("@password",katasandi);
 
                         using (MySqlDataReader reader = cmd.ExecuteReader()) 
                         {
-                            if (reader.Read()) 
+                            if (reader.Read())
                             {
                                 string namaUser = reader.GetString("nama_user");
                                 string role = reader.GetString("role");
+                                string katasandiHash = BCrypt.Net.BCrypt.HashPassword(katasandi);
 
-                                if (role == "siswa")
+                                if (BCrypt.Net.BCrypt.Verify(katasandi, katasandiHash))
                                 {
                                     MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
 
-                                    siswa FormSiswa = new siswa(namaUser);
+                                    if (role == "siswa")
+                                    {
 
-                                    FormSiswa.FormClosed += FormSiswa_FormClosed;
+                                        siswa FormSiswa = new siswa(namaUser);
 
-                                    FormSiswa.Show();
+                                        FormSiswa.FormClosed += FormSiswa_FormClosed;
 
-                                    this.Hide();
-                                }
-                                else if (role == "pengurus")
-                                {
-                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
+                                        FormSiswa.Show();
 
-                                    pengurus FormPengurus = new pengurus(namaUser);
+                                        this.Hide();
+                                    }
+                                    else if (role == "pengurus")
+                                    {
 
-                                    FormPengurus.FormClosed += FormPengurus_FormClosed;
+                                        pengurus FormPengurus = new pengurus(namaUser);
 
-                                    FormPengurus.Show();
+                                        FormPengurus.FormClosed += FormPengurus_FormClosed;
 
-                                    this.Hide();
+                                        FormPengurus.Show();
+
+                                        this.Hide();
+                                    }
+                                    else if (role == "pembina")
+                                    {
+
+                                        pembina FormPembina = new pembina(namaUser);
+
+                                        FormPembina.FormClosed += FormPembina_FormClosed;
+
+                                        FormPembina.Show();
+
+                                        this.Hide();
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Role tidak valid!");
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
-
-                                    pembina FormPembina = new pembina(namaUser);
-
-                                    FormPembina.FormClosed += FormPembina_FormClosed;
-
-                                    FormPembina.Show();
-
-                                    this.Hide();
-
+                                    MessageBox.Show("Kata sandi salah!");
                                 }
-
-                            } else
+                            }
+                            else
                             {
-                                MessageBox.Show("Username atau kata sandi salah!");
+                                MessageBox.Show("Username tidak ditemukan!");
                             }
                         }
                     }

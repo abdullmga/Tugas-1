@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using BCrypt.Net;
 
 namespace Tugas_1
 {
@@ -32,6 +32,7 @@ namespace Tugas_1
                 namaLengkap.Text = "";
                 namaLengkap.ForeColor = Color.Black;
             }
+           
         }
 
         private void namaLengkap_Leave(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace Tugas_1
                 
             if (nisn.Length != 10)
             {
-                MessageBox.Show("NISN wajib berjumlah 10 digit!"); 
+                MessageBox.Show("NISN wajib terdiri dari 10 digit angka!"); 
                 return;
             }
             if (katasandi != ulangikatasandi)
@@ -117,6 +118,7 @@ namespace Tugas_1
                 MessageBox.Show("Password tidak sama!");
                 return;
             }
+            string katasandiHash = BCrypt.Net.BCrypt.HashPassword(katasandi);
 
             string query = @"INSERT INTO `USER` (nama_user, nisn, username, password, role) VALUES (@nama_user, @nisn, @username, @password, @role)";
             try
@@ -132,7 +134,7 @@ namespace Tugas_1
                         cmd.Parameters.AddWithValue("@nama_user", namalengkap);
                         cmd.Parameters.AddWithValue("@username", username);
                         cmd.Parameters.AddWithValue("@nisn", nisn);
-                        cmd.Parameters.AddWithValue("@password", katasandi);
+                        cmd.Parameters.AddWithValue("@password", katasandiHash);
                         cmd.Parameters.AddWithValue("@role", "siswa");
 
                         cmd.ExecuteNonQuery();
@@ -154,7 +156,7 @@ namespace Tugas_1
                 if (ex.Number == 1062)
                 {
                     MessageBox.Show(
-                        "Username sudah digunakan! Silakan pilih username lain.",
+                        "Username atau NISN sudah digunakan!",
                         "Pendaftaran Gagal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
