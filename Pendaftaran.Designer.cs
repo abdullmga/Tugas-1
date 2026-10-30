@@ -95,7 +95,7 @@
             this.kataSandi.Name = "kataSandi";
             this.kataSandi.PasswordChar = '*';
             this.kataSandi.Size = new System.Drawing.Size(502, 39);
-            this.kataSandi.TabIndex = 22;
+            this.kataSandi.TabIndex = 0;
             this.kataSandi.Tag = "";
             this.kataSandi.Text = "Masukkan Kata Sandi";
             this.kataSandi.Enter += new System.EventHandler(this.kataSandi_Enter_1);
@@ -110,7 +110,7 @@
             this.namaLengkap.Multiline = true;
             this.namaLengkap.Name = "namaLengkap";
             this.namaLengkap.Size = new System.Drawing.Size(546, 39);
-            this.namaLengkap.TabIndex = 21;
+            this.namaLengkap.TabIndex = 0;
             this.namaLengkap.Text = "Masukkan Nama Lengkap";
             this.namaLengkap.Enter += new System.EventHandler(this.namaLengkap_Enter);
             this.namaLengkap.Leave += new System.EventHandler(this.namaLengkap_Leave);
@@ -154,7 +154,7 @@
             this.NISN.Multiline = true;
             this.NISN.Name = "NISN";
             this.NISN.Size = new System.Drawing.Size(551, 44);
-            this.NISN.TabIndex = 28;
+            this.NISN.TabIndex = 0;
             this.NISN.Text = "Masukkan NISN";
             this.NISN.Enter += new System.EventHandler(this.NISN_Enter);
             this.NISN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NISN_KeyPress);
@@ -239,7 +239,7 @@
             this.UlangiKataSandi.Name = "UlangiKataSandi";
             this.UlangiKataSandi.PasswordChar = '*';
             this.UlangiKataSandi.Size = new System.Drawing.Size(502, 39);
-            this.UlangiKataSandi.TabIndex = 43;
+            this.UlangiKataSandi.TabIndex = 1;
             this.UlangiKataSandi.Tag = "";
             this.UlangiKataSandi.Text = "Masukkan Kata Sandi Lagi";
             this.UlangiKataSandi.Enter += new System.EventHandler(this.UlangiKataSandi_Enter);
@@ -305,7 +305,7 @@
             this.Username.Multiline = true;
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(551, 44);
-            this.Username.TabIndex = 28;
+            this.Username.TabIndex = 0;
             this.Username.Text = "Masukkan Username";
             this.Username.Enter += new System.EventHandler(this.Username_Enter);
             this.Username.Leave += new System.EventHandler(this.Username_Leave);

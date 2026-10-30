@@ -57,7 +57,7 @@
             this.btnMasuk.Location = new System.Drawing.Point(418, 542);
             this.btnMasuk.Name = "btnMasuk";
             this.btnMasuk.Size = new System.Drawing.Size(583, 57);
-            this.btnMasuk.TabIndex = 16;
+            this.btnMasuk.TabIndex = 0;
             this.btnMasuk.Text = "Masuk";
             this.btnMasuk.UseVisualStyleBackColor = false;
             this.btnMasuk.Click += new System.EventHandler(this.btnMasuk_Click);
@@ -72,7 +72,7 @@
             this.kataSandi.Name = "kataSandi";
             this.kataSandi.PasswordChar = '*';
             this.kataSandi.Size = new System.Drawing.Size(492, 51);
-            this.kataSandi.TabIndex = 13;
+            this.kataSandi.TabIndex = 0;
             this.kataSandi.Tag = "";
             this.kataSandi.Text = "Masukkan Kata Sandi";
             this.kataSandi.Enter += new System.EventHandler(this.kataSandi_Enter);
@@ -87,8 +87,8 @@
             this.NISUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NISUsername.Multiline = true;
             this.NISUsername.Name = "NISUsername";
-            this.NISUsername.Size = new System.Drawing.Size(685, 42);
-            this.NISUsername.TabIndex = 12;
+            this.NISUsername.Size = new System.Drawing.Size(552, 42);
+            this.NISUsername.TabIndex = 0;
             this.NISUsername.Text = "Masukkan Username";
             this.NISUsername.Enter += new System.EventHandler(this.NISUsername_Enter);
             this.NISUsername.Leave += new System.EventHandler(this.NISUsername_Leave);
