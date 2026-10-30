@@ -20,7 +20,7 @@ namespace Tugas_1
             InitializeComponent();
         }
 
-        private string placeholderNISUsername = "Masukkan Username";
+        private string placeholderUsernameatauNISN = "Masukkan Username atau NISN";
         private string placeholderKataSandi = "Masukkan Kata Sandi";
 
 
@@ -39,7 +39,7 @@ namespace Tugas_1
 
         private void NISUsername_Enter(object sender, EventArgs e)
         {
-            if (NISUsername.Text == placeholderNISUsername)
+            if (NISUsername.Text == placeholderUsernameatauNISN)
             {
                 NISUsername.Text = "";
                 NISUsername.ForeColor = Color.Black;
@@ -50,7 +50,7 @@ namespace Tugas_1
         {
             if (string.IsNullOrWhiteSpace(NISUsername.Text))
             {
-                NISUsername.Text = placeholderNISUsername;
+                NISUsername.Text = placeholderUsernameatauNISN;
                 NISUsername.ForeColor = Color.Silver;
             }
         }
@@ -118,11 +118,11 @@ namespace Tugas_1
 
         private void btnMasuk_Click(object sender, EventArgs e)
         {
-            string username = NISUsername.Text;
+            string usernameataunisn = NISUsername.Text;
             string katasandi = kataSandi.Text;
             
 
-            if (string.IsNullOrWhiteSpace(username) || username == placeholderNISUsername ||
+            if (string.IsNullOrWhiteSpace(usernameataunisn) || usernameataunisn == placeholderUsernameatauNISN ||
                 string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
             {
                 MessageBox.Show("Harap Isi Seluruh Input Masuk",
@@ -133,7 +133,7 @@ namespace Tugas_1
 
             }
             
-            string query = @"SELECT id_user, nama_user, role  FROM `USER` WHERE username=@username";
+            string query = @"SELECT id_user, nama_user, password, role FROM `USER` WHERE username=@username OR nisn=@nisn";
 
             try
             {
@@ -145,7 +145,8 @@ namespace Tugas_1
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@username",username);
+                        cmd.Parameters.AddWithValue("@username", usernameataunisn);
+                        cmd.Parameters.AddWithValue("@nisn", usernameataunisn);
 
                         using (MySqlDataReader reader = cmd.ExecuteReader()) 
                         {
@@ -153,9 +154,9 @@ namespace Tugas_1
                             {
                                 string namaUser = reader.GetString("nama_user");
                                 string role = reader.GetString("role");
-                                string katasandiHash = BCrypt.Net.BCrypt.HashPassword(katasandi);
+                                string katasandiHashdiDB = reader.GetString("password");
 
-                                if (BCrypt.Net.BCrypt.Verify(katasandi, katasandiHash))
+                                if (BCrypt.Net.BCrypt.Verify(katasandi, katasandiHashdiDB))
                                 {
                                     MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
 
@@ -205,7 +206,7 @@ namespace Tugas_1
                             }
                             else
                             {
-                                MessageBox.Show("Username tidak ditemukan!");
+                                MessageBox.Show("Username / NISN tidak ditemukan!");
                             }
                         }
                     }
