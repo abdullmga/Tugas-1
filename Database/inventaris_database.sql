@@ -8,11 +8,9 @@ CREATE DATABASE IF NOT EXISTS `inventaris`
 
 USE `inventaris`;
 
-
 -- =========================================================
 -- DDL - PEMBUATAN TABLE
 -- =========================================================
-
 
 -- =========================================================
 -- TABLE BARANG
@@ -36,10 +34,20 @@ CREATE TABLE `BARANG` (
 CREATE TABLE `USER` (
     `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `nama_user` VARCHAR(100) NOT NULL,
+    `nisn` VARCHAR(10) NULL UNIQUE,
     `username` VARCHAR(30) NOT NULL,
-    `password` VARCHAR(10) NOT NULL,
-    `role` ENUM('siswa', 'pembina', 'pengurus') NOT NULL DEFAULT 'siswa'
-);
+    `password` VARCHAR(255) NOT NULL,
+    `role` ENUM('siswa', 'pembina', 'pengurus')
+        NOT NULL DEFAULT 'siswa',
+
+    PRIMARY KEY (`id_user`),
+    UNIQUE KEY `uk_user_username` (`username`)
+) ENGINE=InnoDB;
+
+
+-- =========================================================
+-- TABLE PEMINJAMAN
+-- =========================================================
 
 CREATE TABLE `PEMINJAMAN` (
     `id_peminjaman` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -124,13 +132,16 @@ CREATE TABLE `RENCANA_PEMBELIAN` (
         REFERENCES `USER` (`id_user`)
 ) ENGINE=InnoDB;
 
+
 -- =========================================================
--- REGISTER / TAMBAH AKUN BARU
+-- DML - USER
 -- =========================================================
 
+-- REGISTER
 INSERT INTO `USER`
 (
     `nama_user`,
+    `nisn`,
     `username`,
     `password`,
     `role`
@@ -138,32 +149,27 @@ INSERT INTO `USER`
 VALUES
 (
     @nama_user,
+    @nisn,
     @username,
     @password,
     @role
 );
 
 
--- =========================================================
--- LOGIN USER
--- =========================================================
-
+-- LOGIN
 SELECT
     `id_user`,
     `nama_user`,
     `role`
 FROM `USER`
-WHERE `username` = @username
-AND `password` = @password;
+WHERE `username` = @username;
 
 
--- =========================================================
--- MENAMPILKAN SELURUH USER
--- =========================================================
-
+-- MENAMPILKAN USER
 SELECT
     `id_user`,
     `nama_user`,
+    `nisn`,
     `username`,
     `role`
 FROM `USER`;
@@ -173,11 +179,7 @@ FROM `USER`;
 -- DML - BARANG
 -- =========================================================
 
-
--- =========================================================
--- MENAMPILKAN SELURUH BARANG / KATALOG
--- =========================================================
-
+-- MENAMPILKAN BARANG
 SELECT
     `id_barang`,
     `nama_barang`,
@@ -187,10 +189,7 @@ SELECT
 FROM `BARANG`;
 
 
--- =========================================================
--- MENAMBAHKAN BARANG BARU
--- =========================================================
-
+-- TAMBAH BARANG
 INSERT INTO `BARANG`
 (
     `nama_barang`,
@@ -207,10 +206,7 @@ VALUES
 );
 
 
--- =========================================================
--- MENGUBAH DATA BARANG
--- =========================================================
-
+-- UPDATE BARANG
 UPDATE `BARANG`
 SET
     `nama_barang` = @nama_barang,
@@ -220,18 +216,12 @@ SET
 WHERE `id_barang` = @id_barang;
 
 
--- =========================================================
--- MENGHAPUS BARANG
--- =========================================================
-
+-- DELETE BARANG
 DELETE FROM `BARANG`
 WHERE `id_barang` = @id_barang;
 
 
--- =========================================================
--- MENCARI BARANG BERDASARKAN NAMA
--- =========================================================
-
+-- CARI BARANG
 SELECT
     `id_barang`,
     `nama_barang`,
@@ -246,11 +236,7 @@ WHERE `nama_barang` LIKE @keyword;
 -- DML - PEMINJAMAN
 -- =========================================================
 
-
--- =========================================================
--- MEMBUAT PENGAJUAN PEMINJAMAN
--- =========================================================
-
+-- TAMBAH PEMINJAMAN
 INSERT INTO `PEMINJAMAN`
 (
     `id_user`,
@@ -269,10 +255,7 @@ VALUES
 );
 
 
--- =========================================================
--- MENAMPILKAN PEMINJAMAN MILIK USER
--- =========================================================
-
+-- PEMINJAMAN MILIK USER
 SELECT
     `id_peminjaman`,
     `id_user`,
@@ -284,10 +267,7 @@ FROM `PEMINJAMAN`
 WHERE `id_user` = @id_user;
 
 
--- =========================================================
--- MENAMPILKAN SELURUH PEMINJAMAN
--- =========================================================
-
+-- SEMUA PEMINJAMAN
 SELECT
     `id_peminjaman`,
     `id_user`,
@@ -298,10 +278,7 @@ SELECT
 FROM `PEMINJAMAN`;
 
 
--- =========================================================
--- MENGUBAH STATUS PERSETUJUAN PEMINJAMAN
--- =========================================================
-
+-- UPDATE STATUS PEMINJAMAN
 UPDATE `PEMINJAMAN`
 SET
     `status_persetujuan` = @status_persetujuan,
@@ -313,11 +290,7 @@ WHERE `id_peminjaman` = @id_peminjaman;
 -- DML - DETAIL PEMINJAMAN
 -- =========================================================
 
-
--- =========================================================
--- MENAMBAHKAN BARANG KE PEMINJAMAN
--- =========================================================
-
+-- TAMBAH DETAIL PEMINJAMAN
 INSERT INTO `DETAIL_PEMINJAMAN`
 (
     `id_peminjaman`,
@@ -332,10 +305,7 @@ VALUES
 );
 
 
--- =========================================================
--- MENAMPILKAN DETAIL BARANG YANG DIPINJAM
--- =========================================================
-
+-- LIHAT DETAIL PEMINJAMAN
 SELECT
     `id_detail`,
     `id_peminjaman`,
@@ -349,11 +319,7 @@ WHERE `id_peminjaman` = @id_peminjaman;
 -- DML - PENGEMBALIAN
 -- =========================================================
 
-
--- =========================================================
--- MENCATAT PENGEMBALIAN BARANG
--- =========================================================
-
+-- TAMBAH PENGEMBALIAN
 INSERT INTO `PENGEMBALIAN`
 (
     `id_peminjaman`,
@@ -370,10 +336,7 @@ VALUES
 );
 
 
--- =========================================================
--- MENAMPILKAN DATA PENGEMBALIAN
--- =========================================================
-
+-- LIHAT PENGEMBALIAN
 SELECT
     `id_pengembalian`,
     `id_peminjaman`,
@@ -387,11 +350,7 @@ FROM `PENGEMBALIAN`;
 -- DML - RENCANA PEMBELIAN
 -- =========================================================
 
-
--- =========================================================
--- MEMBUAT PENGAJUAN RENCANA PEMBELIAN
--- =========================================================
-
+-- TAMBAH RENCANA PEMBELIAN
 INSERT INTO `RENCANA_PEMBELIAN`
 (
     `nama_barang`,
@@ -408,10 +367,7 @@ VALUES
 );
 
 
--- =========================================================
--- MENAMPILKAN RENCANA PEMBELIAN MILIK USER
--- =========================================================
-
+-- RENCANA PEMBELIAN MILIK USER
 SELECT
     `id_rencana`,
     `nama_barang`,
@@ -422,10 +378,7 @@ FROM `RENCANA_PEMBELIAN`
 WHERE `id_pengusul` = @id_pengusul;
 
 
--- =========================================================
--- MENAMPILKAN SELURUH RENCANA PEMBELIAN
--- =========================================================
-
+-- SEMUA RENCANA PEMBELIAN
 SELECT
     `id_rencana`,
     `nama_barang`,
@@ -435,30 +388,78 @@ SELECT
 FROM `RENCANA_PEMBELIAN`;
 
 
--- =========================================================
--- MENGUBAH STATUS RENCANA PEMBELIAN
--- =========================================================
-
+-- UPDATE STATUS RENCANA PEMBELIAN
 UPDATE `RENCANA_PEMBELIAN`
 SET
     `status` = @status
 WHERE `id_rencana` = @id_rencana;
 
 
+-- =========================================================
+-- DATA TEST
+-- =========================================================
 
-insert into `user`(nama_user, username, password, `role`) VALUES ('Muhammad', 'mhd', '123', 'pengurus');
+INSERT INTO `USER`
+(
+    `nama_user`,
+    `username`,
+    `password`,
+    `role`
+)
+VALUES
+(
+    'Oliver Queen',
+    'oli',
+    '123',
+    'pengurus'
+);
 
-ALTER TABLE `USER`
-MODIFY COLUMN `role`
-ENUM('siswa', 'pembina', 'pengurus')
-NOT NULL DEFAULT 'siswa';
 
-desc user; 
+INSERT INTO `USER`
+(
+    `nama_user`,
+    `username`,
+    `password`,
+    `role`
+)
+VALUES
+(
+    'Mr.Junior',
+    'junior',
+    '123',
+    'pembina'
+);
 
-delete from `user` where role = "";
 
+-- =========================================================
+-- DEBUG / CEK DATA
+-- =========================================================
 
-insert into `user`(nama_user, username, password, `role`) VALUES ('Chloe Sullivan', 'chole', '123', 'pembina');
+DESCRIBE `USER`;
 
+SELECT * FROM `USER`;
 
-update `user` set username = 'chloe' where `role` = 'pembina';
+SELECT * FROM `BARANG`;
+
+SELECT * FROM `PEMINJAMAN`;
+
+SELECT * FROM `DETAIL_PEMINJAMAN`;
+
+SELECT * FROM `PENGEMBALIAN`;
+
+SELECT * FROM `RENCANA_PEMBELIAN`;
+
+-- =========================================================
+-- MENAMBAHKAN ROLE PENGURUS/PEMBINA
+-- =========================================================
+
+INSERT INTO `user` (nama_user, username, password, role)
+VALUES 
+('Ahmed Subarjo', 'ahmad', '$2a$12$5mVZ43I9ZUyaAzNKJZVQueQ565YKs9SPdltBhdxUawFuuYwyZ/Ehy', 'pengurus');
+
+-- https://bcrypt-generator.com/
+-- link untuk generate hash bcrypt password
+
+INSERT INTO `user` (nama_user, username, password, role)
+VALUES 
+('Hamud Bin Khaled', 'hamud', '$2a$12$hyJ5oLtOXMRhzJ4gHWwFNOKMoDxIEAMPufxjJtJ1vKNFg4Krlzm9i', 'pembina');
