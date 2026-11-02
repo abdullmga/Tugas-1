@@ -62,6 +62,8 @@ namespace Tugas_1
 
             imgView1.Visible = true;
             imgHide1.Visible = false;
+
+            this.ActiveControl = label1;
         }
 
         private void kataSandi_Enter_1(object sender, EventArgs e)

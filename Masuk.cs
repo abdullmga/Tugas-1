@@ -163,7 +163,7 @@ namespace Tugas_1
                                     if (role == "siswa")
                                     {
 
-                                        siswa FormSiswa = new siswa(namaUser);
+                                        siswa FormSiswa = new siswa();
 
                                         FormSiswa.FormClosed += FormSiswa_FormClosed;
 
@@ -174,7 +174,7 @@ namespace Tugas_1
                                     else if (role == "pengurus")
                                     {
 
-                                        pengurus FormPengurus = new pengurus(namaUser);
+                                        pengurus FormPengurus = new pengurus();
 
                                         FormPengurus.FormClosed += FormPengurus_FormClosed;
 
@@ -185,7 +185,7 @@ namespace Tugas_1
                                     else if (role == "pembina")
                                     {
 
-                                        pembina FormPembina = new pembina(namaUser);
+                                        pembina FormPembina = new pembina();
 
                                         FormPembina.FormClosed += FormPembina_FormClosed;
 

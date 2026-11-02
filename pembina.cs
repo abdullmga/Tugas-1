@@ -14,11 +14,11 @@ namespace Tugas_1
 {
     public partial class pembina : Form
     {
-        public pembina(string namaUser)
+        public pembina()
         {
             InitializeComponent();
-
-            namaPengguna.Text = namaUser;
+            //string namaUser
+            //namaPengguna.Text = namaUser;
 
         }
 
@@ -49,6 +49,44 @@ namespace Tugas_1
         private void FormMasuk_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDashboarddanLaporan_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+            pembina_dashboard_laporan dashboardAndLaporan = new pembina_dashboard_laporan();
+
+            dashboardAndLaporan.MdiParent = this;
+
+            dashboardAndLaporan.Dock = DockStyle.Fill;
+
+            dashboardAndLaporan.Show();
+
+            dashboardAndLaporan.BringToFront();
+
+
+        }
+
+        private void btnKatalogBarang_Click(object sender, EventArgs e)
+        {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+
+            siswa_katalog FormKatalogBarang = new siswa_katalog();
+
+            FormKatalogBarang.MdiParent = this;
+            
+            FormKatalogBarang.Dock = DockStyle.Fill;
+
+            FormKatalogBarang.Show();
+
+            FormKatalogBarang.BringToFront();
         }
     }
 }

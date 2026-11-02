@@ -13,11 +13,12 @@ namespace Tugas_1
 {
     public partial class pengurus : Form
     {
-        public pengurus(string namaUser)
+        public pengurus()
         {
             InitializeComponent();
 
-            namaPengguna.Text = namaUser;
+            //string namaUser
+            //namaPengguna.Text = namaUser;
         }
 
         private void labelKeluar_Click(object sender, EventArgs e)
