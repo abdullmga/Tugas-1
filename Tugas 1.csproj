@@ -97,6 +97,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pembina-dashboard&amp;laporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pembina-dashboard&amp;laporan.Designer.cs">
+      <DependentUpon>pembina-dashboard&amp;laporan.cs</DependentUpon>
+    </Compile>
     <Compile Include="pembina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="pembina-dashboard&amp;laporan.resx">
+      <DependentUpon>pembina-dashboard&amp;laporan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pembina.resx">
       <DependentUpon>pembina.cs</DependentUpon>
     </EmbeddedResource>
