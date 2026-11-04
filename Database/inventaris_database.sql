@@ -37,7 +37,7 @@ CREATE TABLE `USER` (
     `nisn` VARCHAR(10) NULL UNIQUE,
     `username` VARCHAR(30) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
-    `role` ENUM('siswa', 'pembina', 'pengurus')
+    `role` ENUM('siswa', 'pengurus')
         NOT NULL DEFAULT 'siswa',
 
     PRIMARY KEY (`id_user`),

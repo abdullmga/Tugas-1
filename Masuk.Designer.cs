@@ -55,7 +55,7 @@
             this.btnMasuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnMasuk.ForeColor = System.Drawing.Color.White;
             this.btnMasuk.Location = new System.Drawing.Point(19, 271);
-            this.btnMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMasuk.Margin = new System.Windows.Forms.Padding(2);
             this.btnMasuk.Name = "btnMasuk";
             this.btnMasuk.Size = new System.Drawing.Size(389, 37);
             this.btnMasuk.TabIndex = 0;
@@ -141,12 +141,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(110, 319);
+            this.label4.Location = new System.Drawing.Point(73, 319);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 20);
+            this.label4.Size = new System.Drawing.Size(268, 20);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Belum punya akun? Daftar";
+            this.label4.Text = "Belum punya akun? Daftar sekarang";
             // 
             // daftar
             // 
@@ -155,11 +155,11 @@
             this.daftar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.daftar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.daftar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.daftar.Location = new System.Drawing.Point(253, 319);
+            this.daftar.Location = new System.Drawing.Point(217, 319);
             this.daftar.Name = "daftar";
-            this.daftar.Size = new System.Drawing.Size(54, 20);
+            this.daftar.Size = new System.Drawing.Size(124, 20);
             this.daftar.TabIndex = 33;
-            this.daftar.Text = "Daftar";
+            this.daftar.Text = "Daftar sekarang";
             this.daftar.Click += new System.EventHandler(this.daftar_Click);
             // 
             // imgView

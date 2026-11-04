@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPendaftaran = new System.Windows.Forms.Button();
             this.btnMasuk = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +41,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(343, 79);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(226, 210);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +80,7 @@
             this.btnPendaftaran.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPendaftaran.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
             this.btnPendaftaran.Location = new System.Drawing.Point(468, 390);
-            this.btnPendaftaran.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPendaftaran.Margin = new System.Windows.Forms.Padding(2);
             this.btnPendaftaran.Name = "btnPendaftaran";
             this.btnPendaftaran.Size = new System.Drawing.Size(177, 37);
             this.btnPendaftaran.TabIndex = 17;
@@ -99,7 +98,7 @@
             this.btnMasuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnMasuk.ForeColor = System.Drawing.Color.White;
             this.btnMasuk.Location = new System.Drawing.Point(267, 390);
-            this.btnMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMasuk.Margin = new System.Windows.Forms.Padding(2);
             this.btnMasuk.Name = "btnMasuk";
             this.btnMasuk.Size = new System.Drawing.Size(177, 37);
             this.btnMasuk.TabIndex = 18;
@@ -107,31 +106,19 @@
             this.btnMasuk.UseVisualStyleBackColor = false;
             this.btnMasuk.Click += new System.EventHandler(this.btnMasuk_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(157, 180);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 49);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "TES KONEKSI";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // SelamatDatang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(945, 629);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMasuk);
             this.Controls.Add(this.btnPendaftaran);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(961, 668);
             this.MinimizeBox = false;
@@ -153,7 +140,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPendaftaran;
         private System.Windows.Forms.Button btnMasuk;
-        private System.Windows.Forms.Button button1;
     }
 }
 

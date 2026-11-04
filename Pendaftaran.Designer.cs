@@ -50,6 +50,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Username = new System.Windows.Forms.TextBox();
+            this.masuk = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgView)).BeginInit();
             this.panel3.SuspendLayout();
@@ -80,7 +82,7 @@
             this.btnLanjutkan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnLanjutkan.ForeColor = System.Drawing.Color.White;
             this.btnLanjutkan.Location = new System.Drawing.Point(22, 472);
-            this.btnLanjutkan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLanjutkan.Margin = new System.Windows.Forms.Padding(2);
             this.btnLanjutkan.Name = "btnLanjutkan";
             this.btnLanjutkan.Size = new System.Drawing.Size(386, 37);
             this.btnLanjutkan.TabIndex = 25;
@@ -93,7 +95,7 @@
             this.kataSandi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.kataSandi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kataSandi.Location = new System.Drawing.Point(31, 342);
-            this.kataSandi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kataSandi.Margin = new System.Windows.Forms.Padding(2);
             this.kataSandi.Multiline = true;
             this.kataSandi.Name = "kataSandi";
             this.kataSandi.PasswordChar = '*';
@@ -110,7 +112,7 @@
             this.namaLengkap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namaLengkap.ForeColor = System.Drawing.Color.Silver;
             this.namaLengkap.Location = new System.Drawing.Point(8, 6);
-            this.namaLengkap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.namaLengkap.Margin = new System.Windows.Forms.Padding(2);
             this.namaLengkap.Multiline = true;
             this.namaLengkap.Name = "namaLengkap";
             this.namaLengkap.Size = new System.Drawing.Size(364, 25);
@@ -158,7 +160,7 @@
             this.NISN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NISN.ForeColor = System.Drawing.Color.Silver;
             this.NISN.Location = new System.Drawing.Point(7, 7);
-            this.NISN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NISN.Margin = new System.Windows.Forms.Padding(2);
             this.NISN.Multiline = true;
             this.NISN.Name = "NISN";
             this.NISN.Size = new System.Drawing.Size(367, 29);
@@ -183,7 +185,7 @@
             // 
             this.imgHide.Image = global::Tugas_1.Properties.Resources.hide;
             this.imgHide.Location = new System.Drawing.Point(347, 8);
-            this.imgHide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgHide.Margin = new System.Windows.Forms.Padding(2);
             this.imgHide.Name = "imgHide";
             this.imgHide.Size = new System.Drawing.Size(30, 20);
             this.imgHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -195,7 +197,7 @@
             // 
             this.imgView.Image = global::Tugas_1.Properties.Resources.view;
             this.imgView.Location = new System.Drawing.Point(347, 8);
-            this.imgView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgView.Margin = new System.Windows.Forms.Padding(2);
             this.imgView.Name = "imgView";
             this.imgView.Size = new System.Drawing.Size(30, 20);
             this.imgView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,7 +210,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.namaLengkap);
             this.panel3.Location = new System.Drawing.Point(22, 123);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(387, 37);
             this.panel3.TabIndex = 39;
@@ -218,7 +220,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.NISN);
             this.panel1.Location = new System.Drawing.Point(22, 192);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 37);
             this.panel1.TabIndex = 40;
@@ -229,7 +231,7 @@
             this.panel2.Controls.Add(this.imgView);
             this.panel2.Controls.Add(this.imgHide);
             this.panel2.Location = new System.Drawing.Point(22, 336);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(387, 37);
             this.panel2.TabIndex = 41;
@@ -250,7 +252,7 @@
             this.UlangiKataSandi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UlangiKataSandi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UlangiKataSandi.Location = new System.Drawing.Point(31, 410);
-            this.UlangiKataSandi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UlangiKataSandi.Margin = new System.Windows.Forms.Padding(2);
             this.UlangiKataSandi.Multiline = true;
             this.UlangiKataSandi.Name = "UlangiKataSandi";
             this.UlangiKataSandi.PasswordChar = '*';
@@ -267,7 +269,7 @@
             this.panel4.Controls.Add(this.imgView1);
             this.panel4.Controls.Add(this.imgHide1);
             this.panel4.Location = new System.Drawing.Point(22, 403);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(387, 37);
             this.panel4.TabIndex = 44;
@@ -276,7 +278,7 @@
             // 
             this.imgView1.Image = global::Tugas_1.Properties.Resources.view;
             this.imgView1.Location = new System.Drawing.Point(347, 8);
-            this.imgView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgView1.Margin = new System.Windows.Forms.Padding(2);
             this.imgView1.Name = "imgView1";
             this.imgView1.Size = new System.Drawing.Size(30, 20);
             this.imgView1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -288,7 +290,7 @@
             // 
             this.imgHide1.Image = global::Tugas_1.Properties.Resources.hide;
             this.imgHide1.Location = new System.Drawing.Point(347, 8);
-            this.imgHide1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgHide1.Margin = new System.Windows.Forms.Padding(2);
             this.imgHide1.Name = "imgHide1";
             this.imgHide1.Size = new System.Drawing.Size(30, 20);
             this.imgHide1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -312,7 +314,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.Username);
             this.panel5.Location = new System.Drawing.Point(22, 263);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(387, 37);
             this.panel5.TabIndex = 46;
@@ -323,7 +325,7 @@
             this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username.ForeColor = System.Drawing.Color.Silver;
             this.Username.Location = new System.Drawing.Point(7, 7);
-            this.Username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Username.Margin = new System.Windows.Forms.Padding(2);
             this.Username.Multiline = true;
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(367, 29);
@@ -332,12 +334,39 @@
             this.Username.Enter += new System.EventHandler(this.Username_Enter);
             this.Username.Leave += new System.EventHandler(this.Username_Leave);
             // 
+            // masuk
+            // 
+            this.masuk.AutoSize = true;
+            this.masuk.BackColor = System.Drawing.Color.Transparent;
+            this.masuk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.masuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.masuk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.masuk.Location = new System.Drawing.Point(222, 521);
+            this.masuk.Name = "masuk";
+            this.masuk.Size = new System.Drawing.Size(118, 20);
+            this.masuk.TabIndex = 48;
+            this.masuk.Text = "Login sekarang";
+            this.masuk.Click += new System.EventHandler(this.masuk_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(76, 521);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(264, 20);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Sudah punya akun? Login sekarang";
+            // 
             // Pendaftaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(434, 561);
+            this.ClientSize = new System.Drawing.Size(434, 601);
+            this.Controls.Add(this.masuk);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label4);
@@ -354,11 +383,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(450, 600);
+            this.MaximumSize = new System.Drawing.Size(450, 640);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(450, 600);
+            this.MinimumSize = new System.Drawing.Size(450, 640);
             this.Name = "Pendaftaran";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -405,5 +434,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox Username;
+        private System.Windows.Forms.Label masuk;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -158,7 +158,6 @@ namespace Tugas_1
 
                                 if (BCrypt.Net.BCrypt.Verify(katasandi, katasandiHashdiDB))
                                 {
-                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
 
                                     if (role == "siswa")
                                     {
@@ -181,18 +180,6 @@ namespace Tugas_1
                                         FormPengurus.Show();
 
                                         this.Hide();
-                                    }
-                                    else if (role == "pembina")
-                                    {
-
-                                        pembina FormPembina = new pembina(namaUser);
-
-                                        FormPembina.FormClosed += FormPembina_FormClosed;
-
-                                        FormPembina.Show();
-
-                                        this.Hide();
-
                                     }
                                     else
                                     {
@@ -217,11 +204,6 @@ namespace Tugas_1
             {
                 MessageBox.Show("Terjadi kesalahan database: " + ex.Message);
             }
-        }
-
-        private void FormPembina_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
         }
 
         private void FormPengurus_FormClosed(object sender, FormClosedEventArgs e)
