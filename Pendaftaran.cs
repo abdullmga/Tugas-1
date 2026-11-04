@@ -292,5 +292,21 @@ namespace Tugas_1
                 e.Handled = true;
             }
         }
+
+        private void masuk_Click(object sender, EventArgs e)
+        {
+            Masuk FormMasuk = new Masuk();
+
+            FormMasuk.FormClosed += FormMasuk_FormClosed1;
+
+            FormMasuk.Show();
+
+            this.Hide();
+        }
+
+        private void FormMasuk_FormClosed1(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

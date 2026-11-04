@@ -110,11 +110,11 @@
       <DependentUpon>pembina.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="notifikasi.cs">
+    <Compile Include="pengurus-data-barang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="notifikasi.Designer.cs">
-      <DependentUpon>notifikasi.cs</DependentUpon>
+    <Compile Include="pengurus-data-barang.Designer.cs">
+      <DependentUpon>pengurus-data-barang.cs</DependentUpon>
     </Compile>
     <Compile Include="pengurus.cs">
       <SubType>Form</SubType>
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="pembina.resx">
       <DependentUpon>pembina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="notifikasi.resx">
-      <DependentUpon>notifikasi.cs</DependentUpon>
+    <EmbeddedResource Include="pengurus-data-barang.resx">
+      <DependentUpon>pengurus-data-barang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pengurus.resx">
       <DependentUpon>pengurus.cs</DependentUpon>

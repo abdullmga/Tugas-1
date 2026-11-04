@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
 
 namespace Tugas_1
 {
@@ -23,9 +21,9 @@ namespace Tugas_1
         {
             Masuk FormMasuk = new Masuk();
 
-            FormMasuk.Show();
-
             FormMasuk.FormClosed += FormMasuk_FormClosed;
+
+            FormMasuk.Show();
 
             this.Hide();
         }
@@ -39,9 +37,9 @@ namespace Tugas_1
         {
             Pendaftaran FormPendaftaran = new Pendaftaran();
 
-            FormPendaftaran.Show();
-
             FormPendaftaran.FormClosed += FormPendaftaran_FormClosed;
+
+            FormPendaftaran.Show();
 
             this.Hide();
         }
@@ -51,23 +49,5 @@ namespace Tugas_1
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DatabaseConnection db = new DatabaseConnection();
-
-                using (MySqlConnection conn = db.GetConnection())
-                {
-                    conn.Open();
-
-                    MessageBox.Show("Berhasil terhubung ke database");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal terhubung ke database" + ex.Message);
-            }
-        }
     }
 }
