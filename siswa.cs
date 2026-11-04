@@ -14,12 +14,12 @@ namespace Tugas_1
     public partial class siswa : Form
     {
 
-        public siswa()
+        public siswa(string namaUser)
         {
             InitializeComponent();
 
-            //string namaUser
-            //namaPengguna.Text = namaUser;
+
+            namaPengguna.Text = namaUser;
         }
 
         private void btn_katalog_Click(object sender, EventArgs e)
@@ -136,5 +136,6 @@ namespace Tugas_1
         {            
             this.Close();
         }
+
     }
 }

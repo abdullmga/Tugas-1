@@ -64,6 +64,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -78,6 +80,7 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(25, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(686, 313);
             this.dataGridView1.TabIndex = 9;
@@ -86,31 +89,37 @@
             // 
             this.barang.HeaderText = "Barang";
             this.barang.Name = "barang";
+            this.barang.ReadOnly = true;
             // 
             // jumlah_barang
             // 
             this.jumlah_barang.HeaderText = "Jumlah";
             this.jumlah_barang.Name = "jumlah_barang";
+            this.jumlah_barang.ReadOnly = true;
             // 
             // tanggal_pinjam
             // 
             this.tanggal_pinjam.HeaderText = "Tgl Pinjam";
             this.tanggal_pinjam.Name = "tanggal_pinjam";
+            this.tanggal_pinjam.ReadOnly = true;
             // 
             // tanggal_kembali
             // 
             this.tanggal_kembali.HeaderText = "Tgl Kembali";
             this.tanggal_kembali.Name = "tanggal_kembali";
+            this.tanggal_kembali.ReadOnly = true;
             // 
             // status_pinjam_barang
             // 
-            this.status_pinjam_barang.HeaderText = "Aksi";
+            this.status_pinjam_barang.HeaderText = "Status";
             this.status_pinjam_barang.Name = "status_pinjam_barang";
+            this.status_pinjam_barang.ReadOnly = true;
             // 
             // keterangan_pinjam_barang
             // 
             this.keterangan_pinjam_barang.HeaderText = "Keterangan";
             this.keterangan_pinjam_barang.Name = "keterangan_pinjam_barang";
+            this.keterangan_pinjam_barang.ReadOnly = true;
             // 
             // label2
             // 
