@@ -122,6 +122,12 @@
     <Compile Include="pengurus.Designer.cs">
       <DependentUpon>pengurus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rencana Pengembalian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rencana Pengembalian.Designer.cs">
+      <DependentUpon>Rencana Pengembalian.cs</DependentUpon>
+    </Compile>
     <Compile Include="siswa-katalog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pengurus.resx">
       <DependentUpon>pengurus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rencana Pengembalian.resx">
+      <DependentUpon>Rencana Pengembalian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa-katalog.resx">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
