@@ -14,11 +14,11 @@ namespace Tugas_1
 {
     public partial class pembina : Form
     {
-        public pembina()
+        public pembina(string namaUser)
         {
             InitializeComponent();
-            //string namaUser
-            //namaPengguna.Text = namaUser;
+            
+            namaPengguna.Text = namaUser;
 
         }
 

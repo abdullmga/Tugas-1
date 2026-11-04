@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Tugas_1
 {
-    public partial class notifikasi : Form
+    public partial class pengurus_data_barang : Form
     {
-        public notifikasi()
+        public pengurus_data_barang()
         {
             InitializeComponent();
         }
 
-        private void notifikasi_Load(object sender, EventArgs e)
+        private void pengurus_data_barang_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
         }

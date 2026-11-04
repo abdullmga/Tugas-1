@@ -13,12 +13,12 @@ namespace Tugas_1
 {
     public partial class pengurus : Form
     {
-        public pengurus()
+        public pengurus(string namaUser)
         {
             InitializeComponent();
 
-            //string namaUser
-            //namaPengguna.Text = namaUser;
+            
+            namaPengguna.Text = namaUser;
         }
 
         private void labelKeluar_Click(object sender, EventArgs e)
@@ -48,6 +48,40 @@ namespace Tugas_1
         private void FormMasuk_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_data_barang_Click(object sender, EventArgs e)
+        {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+
+            pengurus_data_barang dataBarang = new pengurus_data_barang();
+
+            dataBarang.MdiParent = this;
+            dataBarang.FormBorderStyle = FormBorderStyle.None;
+            dataBarang.Dock = DockStyle.Fill;
+
+            dataBarang.Show();
+            dataBarang.BringToFront();
+        }
+
+        private void pengurus_Load(object sender, EventArgs e)
+        {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+
+            pengurus_data_barang dataBarang = new pengurus_data_barang();
+
+            dataBarang.MdiParent = this;
+            dataBarang.FormBorderStyle = FormBorderStyle.None;
+            dataBarang.Dock = DockStyle.Fill;
+
+            dataBarang.Show();
+            dataBarang.BringToFront();
         }
     }
 }
