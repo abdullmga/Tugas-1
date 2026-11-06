@@ -11,17 +11,6 @@ using System.Windows.Forms;
 
 namespace Tugas_1
 {
-    public class DataPengajuan
-    {
-        public string Barang { get; set; }
-        public int Jumlah { get; set; }
-        public DateTime TanggalPinjam { get; set; }
-        public DateTime TanggalKembali { get; set; }
-        public string Keperluan { get; set; }
-        public string Status { get; set; }
-        public string Keterangan { get; set; }
-    }
-
     public partial class siswa_pengajuan : Form
     {
         private static readonly List<DataPengajuan> daftarPengajuan = new List<DataPengajuan>();
@@ -73,6 +62,17 @@ namespace Tugas_1
                     statusCell.Style.ForeColor = Color.FromArgb(114, 28, 36);
                 }
             }
+        }
+
+        public class DataPengajuan
+        {
+            public string Barang { get; set; }
+            public int Jumlah { get; set; }
+            public DateTime TanggalPinjam { get; set; }
+            public DateTime TanggalKembali { get; set; }
+            public string Keperluan { get; set; }
+            public string Status { get; set; }
+            public string Keterangan { get; set; }
         }
     }
 }
