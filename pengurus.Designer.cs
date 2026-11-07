@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnPengembalian = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelKeluar = new System.Windows.Forms.Label();
             this.namaPengguna = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnPengembalian);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.labelKeluar);
             this.panel1.Controls.Add(this.namaPengguna);
@@ -108,7 +108,7 @@
             this.namaPengguna.Name = "namaPengguna";
             this.namaPengguna.Size = new System.Drawing.Size(151, 18);
             this.namaPengguna.TabIndex = 8;
-            this.namaPengguna.Text = "Muhammad Rahlil Alrizky";
+            this.namaPengguna.Text = "Pengurus1";
             // 
             // RoleDibawah
             // 
@@ -244,6 +244,6 @@
         private System.Windows.Forms.Label Role;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPengembalian;
     }
 }

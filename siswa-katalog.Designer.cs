@@ -35,9 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nama_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stok_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jumlah_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kondisi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aksi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
@@ -117,9 +117,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nama_barang,
-            this.stok_barang,
+            this.jumlah_barang,
+            this.harga_barang,
             this.kondisi_barang,
-            this.status_barang,
             this.aksi_barang});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(35, 137);
@@ -140,12 +140,19 @@
             this.nama_barang.Name = "nama_barang";
             this.nama_barang.ReadOnly = true;
             // 
-            // stok_barang
+            // jumlah_barang
             // 
-            this.stok_barang.HeaderText = "Stok";
-            this.stok_barang.MinimumWidth = 8;
-            this.stok_barang.Name = "stok_barang";
-            this.stok_barang.ReadOnly = true;
+            this.jumlah_barang.HeaderText = "Jumlah";
+            this.jumlah_barang.MinimumWidth = 8;
+            this.jumlah_barang.Name = "jumlah_barang";
+            this.jumlah_barang.ReadOnly = true;
+            // 
+            // harga_barang
+            // 
+            this.harga_barang.HeaderText = "Harga Satuan";
+            this.harga_barang.MinimumWidth = 6;
+            this.harga_barang.Name = "harga_barang";
+            this.harga_barang.ReadOnly = true;
             // 
             // kondisi_barang
             // 
@@ -153,13 +160,6 @@
             this.kondisi_barang.MinimumWidth = 8;
             this.kondisi_barang.Name = "kondisi_barang";
             this.kondisi_barang.ReadOnly = true;
-            // 
-            // status_barang
-            // 
-            this.status_barang.HeaderText = "Status";
-            this.status_barang.MinimumWidth = 8;
-            this.status_barang.Name = "status_barang";
-            this.status_barang.ReadOnly = true;
             // 
             // aksi_barang
             // 
@@ -213,9 +213,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_barang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stok_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jumlah_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn harga_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn kondisi_barang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn aksi_barang;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
