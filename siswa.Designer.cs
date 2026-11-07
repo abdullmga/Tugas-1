@@ -89,9 +89,9 @@
             this.namaPengguna.ForeColor = System.Drawing.Color.White;
             this.namaPengguna.Location = new System.Drawing.Point(6, 490);
             this.namaPengguna.Name = "namaPengguna";
-            this.namaPengguna.Size = new System.Drawing.Size(202, 18);
+            this.namaPengguna.Size = new System.Drawing.Size(46, 18);
             this.namaPengguna.TabIndex = 8;
-            this.namaPengguna.Text = "Abdullah Muqbil Ghanim Alghanim";
+            this.namaPengguna.Text = "Siswa1";
             // 
             // label4
             // 

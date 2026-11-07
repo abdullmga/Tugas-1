@@ -49,5 +49,53 @@ namespace Tugas_1
         {
             this.Close();
         }
+
+        private void btnDataBarang_Click(object sender, EventArgs e)
+        {
+            foreach (Form MdiChild in this.MdiChildren)
+            {
+                MdiChild.Close();
+            }
+            DataBarang FormDataBarang = new DataBarang();
+
+            FormDataBarang.MdiParent = this;
+            FormDataBarang.FormBorderStyle = FormBorderStyle.None;
+            FormDataBarang.Dock = DockStyle.Fill;
+
+            FormDataBarang.Show();
+            FormDataBarang.BringToFront();
+        }
+
+        private void btnPersetujuan_Click(object sender, EventArgs e)
+        {
+            foreach (Form MdiChild in this.MdiChildren)
+            {
+                MdiChild.Close();
+            }
+            Persetujuan FormPersetujuan = new Persetujuan();
+
+            FormPersetujuan.MdiParent = this;
+            FormPersetujuan.FormBorderStyle = FormBorderStyle.None;
+            FormPersetujuan.Dock = DockStyle.Fill;
+
+            FormPersetujuan.Show();
+            FormPersetujuan.BringToFront();
+        }
+
+        private void btnPengembalian_Click(object sender, EventArgs e)
+        {
+            foreach (Form MdiChild in this.MdiChildren)
+            {
+                MdiChild.Close();
+            }
+            Pengembalian FormPengembalian = new Pengembalian();
+
+            FormPengembalian.MdiParent = this;
+            FormPengembalian.FormBorderStyle = FormBorderStyle.None;
+            FormPengembalian.Dock = DockStyle.Fill;
+
+            FormPengembalian.Show();
+            FormPengembalian.BringToFront();
+        }
     }
 }

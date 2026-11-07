@@ -19,17 +19,22 @@ namespace Tugas_1
 
         private void btnMasuk_Click(object sender, EventArgs e)
         {
+            // Membuat objek baru dari class Masuk ke variabel FormMasuk
             Masuk FormMasuk = new Masuk();
 
+            // Saat FormMasuk di close kita tutup juga form yang terbuka saat ini 
             FormMasuk.FormClosed += FormMasuk_FormClosed;
 
+            // tampilkan form masuk ke layar
             FormMasuk.Show();
 
+            // sembunyikan form yang terbuka saat ini (tetapi form masih aktif di belakang layar)
             this.Hide();
         }
 
         private void FormMasuk_FormClosed(object sender, FormClosedEventArgs e)
         {
+           // tutup form yang pertama kali di buka yang di sembunyikan yaitu Form SelamatDatang
            this.Close();
         }
 
