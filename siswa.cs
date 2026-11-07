@@ -90,28 +90,10 @@ namespace Tugas_1
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            foreach (Form mdiChild in this.MdiChildren)
-            {
-                mdiChild.Close();
-            }
-
-            notifikasi notif = new notifikasi();
-
-            notif.MdiParent = this;
-            notif.FormBorderStyle = FormBorderStyle.None;
-            notif.Dock = DockStyle.Fill;
-
-            notif.Show();
-            notif.BringToFront();
-
-        }
-
         private void labelKeluar_Click(object sender, EventArgs e)
         {
             DialogResult hasil = MessageBox.Show
-                ("Apakah yakin kamu mau kelauar?",
+                ("Apakah yakin kamu mau keluar?",
                 "Konfirmasi keluar",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);

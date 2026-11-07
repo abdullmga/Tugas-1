@@ -50,52 +50,38 @@ namespace Tugas_1
             this.Close();
         }
 
-        private void btnDataBarang_Click(object sender, EventArgs e)
+        private void btn_data_barang_Click(object sender, EventArgs e)
         {
-            foreach (Form MdiChild in this.MdiChildren)
+            foreach (Form mdiChild in this.MdiChildren)
             {
-                MdiChild.Close();
+                mdiChild.Close();
             }
-            DataBarang FormDataBarang = new DataBarang();
 
-            FormDataBarang.MdiParent = this;
-            FormDataBarang.FormBorderStyle = FormBorderStyle.None;
-            FormDataBarang.Dock = DockStyle.Fill;
+            pengurus_data_barang dataBarang = new pengurus_data_barang();
 
-            FormDataBarang.Show();
-            FormDataBarang.BringToFront();
+            dataBarang.MdiParent = this;
+            dataBarang.FormBorderStyle = FormBorderStyle.None;
+            dataBarang.Dock = DockStyle.Fill;
+
+            dataBarang.Show();
+            dataBarang.BringToFront();
         }
 
-        private void btnPersetujuan_Click(object sender, EventArgs e)
+        private void pengurus_Load(object sender, EventArgs e)
         {
-            foreach (Form MdiChild in this.MdiChildren)
+            foreach (Form mdiChild in this.MdiChildren)
             {
-                MdiChild.Close();
+                mdiChild.Close();
             }
-            Persetujuan FormPersetujuan = new Persetujuan();
 
-            FormPersetujuan.MdiParent = this;
-            FormPersetujuan.FormBorderStyle = FormBorderStyle.None;
-            FormPersetujuan.Dock = DockStyle.Fill;
+            pengurus_data_barang dataBarang = new pengurus_data_barang();
 
-            FormPersetujuan.Show();
-            FormPersetujuan.BringToFront();
-        }
+            dataBarang.MdiParent = this;
+            dataBarang.FormBorderStyle = FormBorderStyle.None;
+            dataBarang.Dock = DockStyle.Fill;
 
-        private void btnPengembalian_Click(object sender, EventArgs e)
-        {
-            foreach (Form MdiChild in this.MdiChildren)
-            {
-                MdiChild.Close();
-            }
-            Pengembalian FormPengembalian = new Pengembalian();
-
-            FormPengembalian.MdiParent = this;
-            FormPengembalian.FormBorderStyle = FormBorderStyle.None;
-            FormPengembalian.Dock = DockStyle.Fill;
-
-            FormPengembalian.Show();
-            FormPengembalian.BringToFront();
+            dataBarang.Show();
+            dataBarang.BringToFront();
         }
     }
 }
