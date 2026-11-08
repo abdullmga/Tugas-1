@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Tugas_1
 {
+    // Form data barang lama yang dipertahankan untuk kompatibilitas project.
     public partial class pengurus_data_barang : Form
     {
         public pengurus_data_barang()

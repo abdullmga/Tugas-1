@@ -130,7 +130,7 @@
             this.btn_pinjam.Name = "btn_pinjam";
             this.btn_pinjam.Size = new System.Drawing.Size(239, 41);
             this.btn_pinjam.TabIndex = 5;
-            this.btn_pinjam.Text = "Rencana Pembelian";
+            this.btn_pinjam.Text = "Pengembalian";
             this.btn_pinjam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_pinjam.UseVisualStyleBackColor = false;
             // 
@@ -149,6 +149,7 @@
             this.btn_pengajuan_barang.Text = "Persetujuan";
             this.btn_pengajuan_barang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_pengajuan_barang.UseVisualStyleBackColor = false;
+            this.btn_pengajuan_barang.Click += new System.EventHandler(this.btn_pengajuan_barang_Click);
             // 
             // btn_data_barang
             // 
@@ -166,6 +167,7 @@
             this.btn_data_barang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_data_barang.UseVisualStyleBackColor = false;
             this.btn_data_barang.Click += new System.EventHandler(this.btn_data_barang_Click);
+            this.btn_pinjam.Click += new System.EventHandler(this.btn_pinjam_Click);
             // 
             // Role
             // 

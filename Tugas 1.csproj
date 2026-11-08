@@ -128,6 +128,12 @@
     <Compile Include="Pengembalian.Designer.cs">
       <DependentUpon>Pengembalian.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persetujuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persetujuan.Designer.cs">
+      <DependentUpon>Persetujuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="pengurus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,7 +158,9 @@
     <Compile Include="siswa-katalog.Designer.cs">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
     </Compile>
-    <Compile Include="siswa-pengajuan.cs" />
+    <Compile Include="siswa-pengajuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="siswa-pengajuan.Designer.cs">
       <DependentUpon>siswa-pengajuan.cs</DependentUpon>
     </Compile>
@@ -205,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pengurus.resx">
       <DependentUpon>pengurus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persetujuan.resx">
+      <DependentUpon>Persetujuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rencana Pengembalian.resx">
       <DependentUpon>Rencana Pengembalian.cs</DependentUpon>

@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Tugas_1
 {
+    // Menampilkan katalog barang yang bersumber dari stok database.
     public partial class siswa_katalog : Form
     {
         public siswa_katalog()
@@ -28,13 +30,45 @@ namespace Tugas_1
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
-            TambahBarang("Mic Wireless", 4, "Baik");
-            TambahBarang("Kursi Lipat", 30, "Rusak Ringan");
-            TambahBarang("Megaphone", 0, "Rusak");
+            if (!MuatBarangDatabase())
+            {
+                TambahBarang("Mic Wireless", 4, 450000, "Baik");
+                TambahBarang("Kursi Lipat", 30, 120000, "Rusak Ringan");
+                TambahBarang("Megaphone", 0, 300000, "Rusak");
+            }
         }
 
-        private void TambahBarang(string namaBarang, int stok, string kondisi)
+        private bool MuatBarangDatabase()
         {
+            // Membaca barang terbaru agar katalog siswa sama dengan data pengurus.
+            try
+            {
+                using (MySqlConnection conn = new DatabaseConnection().GetConnection())
+                using (MySqlCommand cmd = new MySqlCommand("SELECT nama_barang, jumlah_barang, nominal_harga, keadaan_barang FROM BARANG ORDER BY nama_barang", conn))
+                {
+                    conn.Open();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        bool adaData = false;
+                        while (reader.Read())
+                        {
+                            adaData = true;
+                            TambahBarang(reader["nama_barang"].ToString(), Convert.ToInt32(reader["jumlah_barang"]), Convert.ToDecimal(reader["nominal_harga"]), reader["keadaan_barang"].ToString());
+                        }
+                        return adaData;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Katalog menggunakan data contoh karena database tidak dapat diakses: " + ex.Message, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+        }
+
+        private void TambahBarang(string namaBarang, int stok, decimal harga, string kondisi)
+        {
+            // Menambahkan satu baris barang ke tabel katalog siswa.
             string status;
             string teksTombol;
 
@@ -49,16 +83,16 @@ namespace Tugas_1
                 teksTombol = "Pinjam";
             }
 
-            dataGridView1.Rows.Add(namaBarang, stok, kondisi, status, teksTombol);
+            dataGridView1.Rows.Add(namaBarang, stok, "Rp " + harga.ToString("N0"), kondisi, teksTombol);
         }
 
         private void dataGridView1_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["aksi_barang"].Index && e.RowIndex >= 0)
             {
-                string status = dataGridView1.Rows[e.RowIndex].Cells["status_barang"].Value?.ToString();
+                int stok = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["jumlah_barang"].Value);
 
-                if (status == "Habis")
+                if (stok <= 0)
                 {
                     e.CellStyle.BackColor = Color.FromArgb(230, 232, 235);
                     e.CellStyle.ForeColor = Color.FromArgb(170, 175, 185);
@@ -77,12 +111,13 @@ namespace Tugas_1
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            // Membuka form pengajuan ketika siswa memilih tombol Pinjam.
             if (e.ColumnIndex == dataGridView1.Columns["aksi_barang"].Index && e.RowIndex >= 0)
             {
-                string status = dataGridView1.Rows[e.RowIndex].Cells["status_barang"].Value?.ToString();
+                int stok = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["jumlah_barang"].Value);
                 string namaBarang = dataGridView1.Rows[e.RowIndex].Cells["nama_barang"].Value?.ToString();
 
-                if (status == "Habis")
+                if (stok <= 0)
                 {
                     MessageBox.Show($"Maaf, barang '{namaBarang}' sedang habis!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;

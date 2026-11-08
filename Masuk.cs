@@ -13,6 +13,7 @@ using BCrypt.Net;
 
 namespace Tugas_1
 {
+    // Menangani proses login siswa dan pengurus menggunakan data USER.
     public partial class Masuk : Form
     {
         public Masuk()
@@ -26,6 +27,7 @@ namespace Tugas_1
 
         private void Masuk_Load(object sender, EventArgs e)
         {
+            // Menyiapkan placeholder dan kondisi awal input password.
             // Memindahkan fokus awal ke label agar TextBox tidak langsung aktif/menyorot teks
             label1.Focus();
 
@@ -114,6 +116,7 @@ namespace Tugas_1
 
         private void btnMasuk_Click(object sender, EventArgs e)
         {
+            // Memvalidasi kredensial, mengisi session, lalu membuka dashboard sesuai role.
             // Mengambil nilai teks dari kontrol input form
             string usernameataunisn = NISUsername.Text;
             string katasandi = kataSandi.Text;
@@ -131,7 +134,7 @@ namespace Tugas_1
             }
 
             // Perintah query SQL untuk mencari data user berdasarkan username atau NISN
-            string query = @"SELECT nama_user, password, role FROM `USER` WHERE username=@username OR nisn=@nisn";
+            string query = @"SELECT id_user, nama_user, password, role FROM `USER` WHERE username=@username OR nisn=@nisn";
 
             try
             {
@@ -154,6 +157,7 @@ namespace Tugas_1
                             if (reader.Read())
                             {
                                 // Mengambil informasi data spesifik dari kolom database yang sesuai
+                                int idUser = reader.GetInt32("id_user");
                                 string namaUser = reader.GetString("nama_user");
                                 string role = reader.GetString("role");
                                 string katasandiHashdiDB = reader.GetString("password");
@@ -161,6 +165,10 @@ namespace Tugas_1
                                 // Memverifikasi kecocokan kata sandi teks biasa dengan hash terenkripsi BCrypt di database
                                 if (BCrypt.Net.BCrypt.Verify(katasandi, katasandiHashdiDB))
                                 {
+                                    AppSession.CurrentUserId = idUser;
+                                    AppSession.CurrentUserName = namaUser;
+                                    AppSession.CurrentUserRole = role;
+
                                     // Memeriksa hak role dari pengguna yang berhasil login
                                     if (role == "siswa")
                                     {
