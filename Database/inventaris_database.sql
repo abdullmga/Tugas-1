@@ -35,9 +35,9 @@ CREATE TABLE `USER` (
     `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `nama_user` VARCHAR(100) NOT NULL,
     `nisn` VARCHAR(10) NULL UNIQUE,
-    `username` VARCHAR(30) NOT NULL,
+    `username` VARCHAR(30) NOT NULL ,
     `password` VARCHAR(255) NOT NULL,
-    `role` ENUM('siswa', 'pembina', 'pengurus')
+    `role` ENUM('siswa', 'pengurus')
         NOT NULL DEFAULT 'siswa',
 
     PRIMARY KEY (`id_user`),

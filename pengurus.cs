@@ -52,36 +52,24 @@ namespace Tugas_1
 
         private void btn_data_barang_Click(object sender, EventArgs e)
         {
-            foreach (Form mdiChild in this.MdiChildren)
+            foreach (Form MdiChild in this.MdiChildren)
             {
-                mdiChild.Close();
+                MdiChild.Close();
             }
 
-            pengurus_data_barang dataBarang = new pengurus_data_barang();
+            DataBarang FormDataBarang = new DataBarang();
 
-            dataBarang.MdiParent = this;
-            dataBarang.FormBorderStyle = FormBorderStyle.None;
-            dataBarang.Dock = DockStyle.Fill;
+            FormDataBarang.MdiParent = this;
+            FormDataBarang.FormBorderStyle = FormBorderStyle.None;
+            FormDataBarang.Dock = DockStyle.Fill;
 
-            dataBarang.Show();
-            dataBarang.BringToFront();
+            FormDataBarang.Show();
+            FormDataBarang.BringToFront();
         }
 
         private void pengurus_Load(object sender, EventArgs e)
         {
-            foreach (Form mdiChild in this.MdiChildren)
-            {
-                mdiChild.Close();
-            }
-
-            pengurus_data_barang dataBarang = new pengurus_data_barang();
-
-            dataBarang.MdiParent = this;
-            dataBarang.FormBorderStyle = FormBorderStyle.None;
-            dataBarang.Dock = DockStyle.Fill;
-
-            dataBarang.Show();
-            dataBarang.BringToFront();
+         
         }
     }
 }

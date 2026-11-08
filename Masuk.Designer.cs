@@ -54,10 +54,10 @@
             this.btnMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnMasuk.ForeColor = System.Drawing.Color.White;
-            this.btnMasuk.Location = new System.Drawing.Point(19, 271);
-            this.btnMasuk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMasuk.Location = new System.Drawing.Point(25, 334);
+            this.btnMasuk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMasuk.Name = "btnMasuk";
-            this.btnMasuk.Size = new System.Drawing.Size(389, 37);
+            this.btnMasuk.Size = new System.Drawing.Size(519, 46);
             this.btnMasuk.TabIndex = 0;
             this.btnMasuk.Text = "Masuk";
             this.btnMasuk.UseVisualStyleBackColor = false;
@@ -67,11 +67,12 @@
             // 
             this.kataSandi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.kataSandi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kataSandi.Location = new System.Drawing.Point(13, 10);
+            this.kataSandi.Location = new System.Drawing.Point(17, 12);
+            this.kataSandi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kataSandi.Multiline = true;
             this.kataSandi.Name = "kataSandi";
             this.kataSandi.PasswordChar = '*';
-            this.kataSandi.Size = new System.Drawing.Size(328, 33);
+            this.kataSandi.Size = new System.Drawing.Size(437, 41);
             this.kataSandi.TabIndex = 0;
             this.kataSandi.Tag = "";
             this.kataSandi.Text = "Masukkan Kata Sandi";
@@ -83,10 +84,11 @@
             this.NISUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NISUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NISUsername.ForeColor = System.Drawing.Color.Silver;
-            this.NISUsername.Location = new System.Drawing.Point(10, 10);
+            this.NISUsername.Location = new System.Drawing.Point(13, 12);
+            this.NISUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NISUsername.Multiline = true;
             this.NISUsername.Name = "NISUsername";
-            this.NISUsername.Size = new System.Drawing.Size(368, 27);
+            this.NISUsername.Size = new System.Drawing.Size(491, 33);
             this.NISUsername.TabIndex = 0;
             this.NISUsername.Text = "Masukkan Username atau NISN";
             this.NISUsername.Enter += new System.EventHandler(this.NISUsername_Enter);
@@ -96,10 +98,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 178);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(25, 219);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.Size = new System.Drawing.Size(109, 25);
             this.label3.TabIndex = 11;
             this.label3.Text = "Kata Sandi";
             // 
@@ -107,10 +108,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 102);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(25, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.Size = new System.Drawing.Size(165, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Username / NISN";
             // 
@@ -118,10 +118,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(15, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 63);
+            this.label1.Size = new System.Drawing.Size(230, 76);
             this.label1.TabIndex = 9;
             this.label1.Text = "Masuk";
             // 
@@ -130,10 +129,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(19, 68);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(25, 84);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(369, 20);
+            this.label6.Size = new System.Drawing.Size(455, 25);
             this.label6.TabIndex = 17;
             this.label6.Text = "Gunakan akun yang diberikan Pengurus Inventaris.";
             // 
@@ -141,12 +139,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(110, 319);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(97, 393);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 20);
+            this.label4.Size = new System.Drawing.Size(328, 25);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Belum punya akun? Daftar";
+            this.label4.Text = "Belum punya akun? Daftar sekarang";
             // 
             // daftar
             // 
@@ -155,19 +152,21 @@
             this.daftar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.daftar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.daftar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.daftar.Location = new System.Drawing.Point(253, 319);
+            this.daftar.Location = new System.Drawing.Point(275, 393);
+            this.daftar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.daftar.Name = "daftar";
-            this.daftar.Size = new System.Drawing.Size(54, 20);
+            this.daftar.Size = new System.Drawing.Size(150, 25);
             this.daftar.TabIndex = 33;
-            this.daftar.Text = "Daftar";
+            this.daftar.Text = "Daftar sekarang";
             this.daftar.Click += new System.EventHandler(this.daftar_Click);
             // 
             // imgView
             // 
             this.imgView.Image = global::Tugas_1.Properties.Resources.view;
-            this.imgView.Location = new System.Drawing.Point(344, 10);
+            this.imgView.Location = new System.Drawing.Point(459, 12);
+            this.imgView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgView.Name = "imgView";
-            this.imgView.Size = new System.Drawing.Size(34, 21);
+            this.imgView.Size = new System.Drawing.Size(45, 26);
             this.imgView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgView.TabIndex = 34;
             this.imgView.TabStop = false;
@@ -176,9 +175,10 @@
             // imgHide
             // 
             this.imgHide.Image = global::Tugas_1.Properties.Resources.hide;
-            this.imgHide.Location = new System.Drawing.Point(344, 10);
+            this.imgHide.Location = new System.Drawing.Point(459, 12);
+            this.imgHide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgHide.Name = "imgHide";
-            this.imgHide.Size = new System.Drawing.Size(34, 21);
+            this.imgHide.Size = new System.Drawing.Size(45, 26);
             this.imgHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgHide.TabIndex = 35;
             this.imgHide.TabStop = false;
@@ -188,9 +188,10 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.NISUsername);
-            this.panel1.Location = new System.Drawing.Point(19, 124);
+            this.panel1.Location = new System.Drawing.Point(25, 153);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 42);
+            this.panel1.Size = new System.Drawing.Size(518, 51);
             this.panel1.TabIndex = 36;
             // 
             // panel2
@@ -199,9 +200,10 @@
             this.panel2.Controls.Add(this.kataSandi);
             this.panel2.Controls.Add(this.imgView);
             this.panel2.Controls.Add(this.imgHide);
-            this.panel2.Location = new System.Drawing.Point(19, 201);
+            this.panel2.Location = new System.Drawing.Point(25, 247);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(389, 45);
+            this.panel2.Size = new System.Drawing.Size(518, 55);
             this.panel2.TabIndex = 37;
             // 
             // object_ded74cf8_2cb6_45a0_a735_0ffb90702273
@@ -216,10 +218,10 @@
             // 
             // Masuk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(434, 461);
+            this.ClientSize = new System.Drawing.Size(576, 558);
             this.Controls.Add(this.daftar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnMasuk);
@@ -229,10 +231,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(450, 500);
+            this.MaximumSize = new System.Drawing.Size(594, 605);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(450, 500);
+            this.MinimumSize = new System.Drawing.Size(594, 605);
             this.Name = "Masuk";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

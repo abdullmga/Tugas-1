@@ -35,10 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nama_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stok_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jumlah_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kondisi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aksi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -47,10 +48,11 @@
             // 
             this.txtsearch_siswa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtsearch_siswa.ForeColor = System.Drawing.Color.Silver;
-            this.txtsearch_siswa.Location = new System.Drawing.Point(26, 76);
+            this.txtsearch_siswa.Location = new System.Drawing.Point(35, 94);
+            this.txtsearch_siswa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtsearch_siswa.Multiline = true;
             this.txtsearch_siswa.Name = "txtsearch_siswa";
-            this.txtsearch_siswa.Size = new System.Drawing.Size(241, 21);
+            this.txtsearch_siswa.Size = new System.Drawing.Size(321, 25);
             this.txtsearch_siswa.TabIndex = 0;
             this.txtsearch_siswa.Text = "Cari nama barang...";
             this.txtsearch_siswa.TextChanged += new System.EventHandler(this.txtsearch_siswa_TextChanged);
@@ -60,20 +62,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 52);
+            this.panel1.Size = new System.Drawing.Size(981, 64);
             this.panel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(17, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 24);
+            this.label1.Size = new System.Drawing.Size(171, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Katalog Barang";
             // 
@@ -84,9 +89,10 @@
             "Baik",
             "Rusak Ringan",
             "Rusak"});
-            this.cmb_siswa.Location = new System.Drawing.Point(294, 76);
+            this.cmb_siswa.Location = new System.Drawing.Point(392, 94);
+            this.cmb_siswa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_siswa.Name = "cmb_siswa";
-            this.cmb_siswa.Size = new System.Drawing.Size(121, 21);
+            this.cmb_siswa.Size = new System.Drawing.Size(160, 24);
             this.cmb_siswa.TabIndex = 2;
             this.cmb_siswa.Text = "Semua kondisi";
             this.cmb_siswa.SelectedIndexChanged += new System.EventHandler(this.cmb_siswa_SelectedIndexChanged);
@@ -95,9 +101,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(35, 80);
+            this.label2.Location = new System.Drawing.Point(47, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 3;
             // 
             // dataGridView1
@@ -110,17 +117,18 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nama_barang,
-            this.stok_barang,
+            this.jumlah_barang,
+            this.harga_barang,
             this.kondisi_barang,
-            this.status_barang,
             this.aksi_barang});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 137);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(686, 313);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 385);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting_1);
@@ -132,12 +140,19 @@
             this.nama_barang.Name = "nama_barang";
             this.nama_barang.ReadOnly = true;
             // 
-            // stok_barang
+            // jumlah_barang
             // 
-            this.stok_barang.HeaderText = "Stok";
-            this.stok_barang.MinimumWidth = 8;
-            this.stok_barang.Name = "stok_barang";
-            this.stok_barang.ReadOnly = true;
+            this.jumlah_barang.HeaderText = "Jumlah";
+            this.jumlah_barang.MinimumWidth = 8;
+            this.jumlah_barang.Name = "jumlah_barang";
+            this.jumlah_barang.ReadOnly = true;
+            // 
+            // harga_barang
+            // 
+            this.harga_barang.HeaderText = "Harga Satuan";
+            this.harga_barang.MinimumWidth = 6;
+            this.harga_barang.Name = "harga_barang";
+            this.harga_barang.ReadOnly = true;
             // 
             // kondisi_barang
             // 
@@ -146,13 +161,6 @@
             this.kondisi_barang.Name = "kondisi_barang";
             this.kondisi_barang.ReadOnly = true;
             // 
-            // status_barang
-            // 
-            this.status_barang.HeaderText = "Status";
-            this.status_barang.MinimumWidth = 8;
-            this.status_barang.Name = "status_barang";
-            this.status_barang.ReadOnly = true;
-            // 
             // aksi_barang
             // 
             this.aksi_barang.HeaderText = "Aksi";
@@ -160,11 +168,18 @@
             this.aksi_barang.Name = "aksi_barang";
             this.aksi_barang.ReadOnly = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(866, 27);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
             // siswa_katalog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 573);
+            this.ClientSize = new System.Drawing.Size(980, 705);
             this.ControlBox = false;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
@@ -172,8 +187,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtsearch_siswa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(957, 659);
+            this.MaximumSize = new System.Drawing.Size(1276, 811);
             this.MinimizeBox = false;
             this.Name = "siswa_katalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -197,9 +213,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_barang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stok_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jumlah_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn harga_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn kondisi_barang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn aksi_barang;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

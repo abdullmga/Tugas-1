@@ -97,6 +97,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBarang.Designer.cs">
+      <DependentUpon>DataBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="pembina-dashboard&amp;laporan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +122,29 @@
     <Compile Include="pengurus-data-barang.Designer.cs">
       <DependentUpon>pengurus-data-barang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pengembalian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pengembalian.Designer.cs">
+      <DependentUpon>Pengembalian.cs</DependentUpon>
+    </Compile>
     <Compile Include="pengurus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pengurus.Designer.cs">
       <DependentUpon>pengurus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rencana Pengembalian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rencana Pengembalian.Designer.cs">
+      <DependentUpon>Rencana Pengembalian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpTambahBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpTambahBarang.Designer.cs">
+      <DependentUpon>PopUpTambahBarang.cs</DependentUpon>
     </Compile>
     <Compile Include="siswa-katalog.cs">
       <SubType>Form</SubType>
@@ -166,6 +190,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataBarang.resx">
+      <DependentUpon>DataBarang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pembina-dashboard&amp;laporan.resx">
       <DependentUpon>pembina-dashboard&amp;laporan.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,8 +202,17 @@
     <EmbeddedResource Include="pengurus-data-barang.resx">
       <DependentUpon>pengurus-data-barang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pengembalian.resx">
+      <DependentUpon>Pengembalian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pengurus.resx">
       <DependentUpon>pengurus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rencana Pengembalian.resx">
+      <DependentUpon>Rencana Pengembalian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpTambahBarang.resx">
+      <DependentUpon>PopUpTambahBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa-katalog.resx">
       <DependentUpon>siswa-katalog.cs</DependentUpon>
@@ -234,6 +270,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\view1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

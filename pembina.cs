@@ -53,22 +53,7 @@ namespace Tugas_1
 
         private void btnDashboarddanLaporan_Click(object sender, EventArgs e)
         {
-
-            foreach (Form mdiChild in this.MdiChildren)
-            {
-                mdiChild.Close();
-            }
-            pembina_dashboard_laporan dashboardAndLaporan = new pembina_dashboard_laporan();
-
-            dashboardAndLaporan.MdiParent = this;
-
-            dashboardAndLaporan.Dock = DockStyle.Fill;
-
-            dashboardAndLaporan.Show();
-
-            dashboardAndLaporan.BringToFront();
-
-
+            DataBarang();
         }
 
         private void btnKatalogBarang_Click(object sender, EventArgs e)
@@ -87,6 +72,27 @@ namespace Tugas_1
             FormKatalogBarang.Show();
 
             FormKatalogBarang.BringToFront();
+        }
+
+        private void pembina_Load(object sender, EventArgs e)
+        {
+            DataBarang();
+        }
+        private void DataBarang()
+        {
+            foreach (Form mdiChild in this.MdiChildren)
+            {
+                mdiChild.Close();
+            }
+            pembina_dashboard_laporan dashboardAndLaporan = new pembina_dashboard_laporan();
+
+            dashboardAndLaporan.MdiParent = this;
+
+            dashboardAndLaporan.Dock = DockStyle.Fill;
+
+            dashboardAndLaporan.Show();
+
+            dashboardAndLaporan.BringToFront();
         }
     }
 }

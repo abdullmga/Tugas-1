@@ -46,8 +46,6 @@ namespace Tugas_1
 
         private void Pendaftaran_Load(object sender, EventArgs e)
         {
-            label1.Focus();
-
             kataSandi.Text = placeholderKataSandi;
             kataSandi.ForeColor = Color.Silver;
             kataSandi.PasswordChar = '\0';
@@ -74,7 +72,6 @@ namespace Tugas_1
                 kataSandi.ForeColor = Color.Black;
 
                 kataSandi.PasswordChar = '*';
-
             }
         }
 
@@ -287,10 +284,29 @@ namespace Tugas_1
 
         private void NISN_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Mengecek apakah tombol yang ditekan adalah tombol kontrol keyboard(misalnya Backspace, Enter, atau tombol arah).
+            // Mengecek apakah tombol yang ditekan adalah angka (0 sampai 9).
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
+
                 e.Handled = true;
             }
+        }
+
+        private void masuk_Click(object sender, EventArgs e)
+        {
+            Masuk FormMasuk = new Masuk();
+
+            FormMasuk.FormClosed += FormMasuk_FormClosed1;
+
+            FormMasuk.Show();
+
+            this.Hide();
+        }
+
+        private void FormMasuk_FormClosed1(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

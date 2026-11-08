@@ -20,21 +20,21 @@ namespace Tugas_1
             InitializeComponent();
         }
 
+        // Variabel untuk menyimpan teks placeholder pada input Username/NISN dan Kata Sandi
         private string placeholderUsernameatauNISN = "Masukkan Username atau NISN";
         private string placeholderKataSandi = "Masukkan Kata Sandi";
 
-
         private void Masuk_Load(object sender, EventArgs e)
         {
+            // Memindahkan fokus awal ke label agar TextBox tidak langsung aktif/menyorot teks
             label1.Focus();
 
             kataSandi.Text = placeholderKataSandi;
             kataSandi.ForeColor = Color.Silver;
-            kataSandi.PasswordChar = '\0';
+            kataSandi.PasswordChar = '\0'; 
 
             imgView.Visible = true;
             imgHide.Visible = false;
-
         }
 
         private void NISUsername_Enter(object sender, EventArgs e)
@@ -61,9 +61,7 @@ namespace Tugas_1
             {
                 kataSandi.Text = "";
                 kataSandi.ForeColor = Color.Black;
-
                 kataSandi.PasswordChar = '*';
-
             }
         }
 
@@ -73,7 +71,6 @@ namespace Tugas_1
             {
                 kataSandi.Text = placeholderKataSandi;
                 kataSandi.ForeColor = Color.Silver;
-
                 kataSandi.PasswordChar = '\0';
             }
         }
@@ -82,7 +79,7 @@ namespace Tugas_1
         {
             if (kataSandi.Text != placeholderKataSandi)
             {
-                kataSandi.PasswordChar = '\0';
+                kataSandi.PasswordChar = '\0'; 
             }
 
             imgHide.Visible = true;
@@ -107,7 +104,6 @@ namespace Tugas_1
             FormPendaftaran.FormClosed += FormPendaftaran_FormClosed;
 
             FormPendaftaran.Show();
-
             this.Hide();
         }
 
@@ -118,27 +114,31 @@ namespace Tugas_1
 
         private void btnMasuk_Click(object sender, EventArgs e)
         {
+            // Mengambil nilai teks dari kontrol input form
             string usernameataunisn = NISUsername.Text;
             string katasandi = kataSandi.Text;
-            
 
+            // Validasi pengecekan apakah input masih kosong atau masih berisi teks placeholder
             if (string.IsNullOrWhiteSpace(usernameataunisn) || usernameataunisn == placeholderUsernameatauNISN ||
                 string.IsNullOrWhiteSpace(katasandi) || katasandi == placeholderKataSandi)
             {
+                // Menampilkan pesan peringatan jika input belum lengkap diisi
                 MessageBox.Show("Harap Isi Seluruh Input Masuk",
                     "Peringatan",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information); 
+                    MessageBoxIcon.Information);
                 return;
-
             }
-            
-            string query = @"SELECT id_user, nama_user, password, role FROM `USER` WHERE username=@username OR nisn=@nisn";
+
+            // Perintah query SQL untuk mencari data user berdasarkan username atau NISN
+            string query = @"SELECT nama_user, password, role FROM `USER` WHERE username=@username OR nisn=@nisn";
 
             try
             {
+
                 DatabaseConnection db = new DatabaseConnection();
 
+                // Membuka koneksi database MySQL menggunakan blok using untuk manajemen memori otomatis
                 using (MySqlConnection conn = db.GetConnection())
                 {
                     conn.Open();
@@ -148,80 +148,62 @@ namespace Tugas_1
                         cmd.Parameters.AddWithValue("@username", usernameataunisn);
                         cmd.Parameters.AddWithValue("@nisn", usernameataunisn);
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader()) 
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
+                            // Memeriksa apakah baris data akun ditemukan di dalam database
                             if (reader.Read())
                             {
+                                // Mengambil informasi data spesifik dari kolom database yang sesuai
                                 string namaUser = reader.GetString("nama_user");
                                 string role = reader.GetString("role");
                                 string katasandiHashdiDB = reader.GetString("password");
 
+                                // Memverifikasi kecocokan kata sandi teks biasa dengan hash terenkripsi BCrypt di database
                                 if (BCrypt.Net.BCrypt.Verify(katasandi, katasandiHashdiDB))
                                 {
-                                    MessageBox.Show("Login berhasil! Selamat datang, " + namaUser);
-
+                                    // Memeriksa hak role dari pengguna yang berhasil login
                                     if (role == "siswa")
                                     {
-
+                                        // Membuka form dashboard siswa dan mengirimkan parameter nama user
                                         siswa FormSiswa = new siswa(namaUser);
-
                                         FormSiswa.FormClosed += FormSiswa_FormClosed;
-
                                         FormSiswa.Show();
-
                                         this.Hide();
                                     }
                                     else if (role == "pengurus")
                                     {
-
+                                        // Membuka form dashboard pengurus dan mengirimkan parameter nama user
                                         pengurus FormPengurus = new pengurus(namaUser);
-
                                         FormPengurus.FormClosed += FormPengurus_FormClosed;
-
                                         FormPengurus.Show();
-
                                         this.Hide();
-                                    }
-                                    else if (role == "pembina")
-                                    {
-
-                                        pembina FormPembina = new pembina(namaUser);
-
-                                        FormPembina.FormClosed += FormPembina_FormClosed;
-
-                                        FormPembina.Show();
-
-                                        this.Hide();
-
                                     }
                                     else
                                     {
+                                        // Pesan error jika level role di database tidak dikenali
                                         MessageBox.Show("Role tidak valid!");
                                     }
                                 }
                                 else
                                 {
+                                    // Pesan peringatan jika kata sandi yang dimasukkan salah
                                     MessageBox.Show("Kata sandi salah!");
                                 }
                             }
                             else
                             {
+                                // Pesan peringatan jika data username atau NISN tidak terdaftar di sistem
                                 MessageBox.Show("Username / NISN tidak ditemukan!");
                             }
                         }
                     }
                 }
-
             }
             catch (MySqlException ex)
             {
+                // Menangkap dan menampilkan pesan error apabila terjadi kendala koneksi atau eksekusi database
                 MessageBox.Show("Terjadi kesalahan database: " + ex.Message);
             }
-        }
-
-        private void FormPembina_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
         }
 
         private void FormPengurus_FormClosed(object sender, FormClosedEventArgs e)
