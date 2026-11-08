@@ -116,11 +116,11 @@
       <DependentUpon>pembina.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="notifikasi.cs">
+    <Compile Include="pengurus-data-barang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="notifikasi.Designer.cs">
-      <DependentUpon>notifikasi.cs</DependentUpon>
+    <Compile Include="pengurus-data-barang.Designer.cs">
+      <DependentUpon>pengurus-data-barang.cs</DependentUpon>
     </Compile>
     <Compile Include="Pengembalian.cs">
       <SubType>Form</SubType>
@@ -134,11 +134,11 @@
     <Compile Include="pengurus.Designer.cs">
       <DependentUpon>pengurus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persetujuan.cs">
+    <Compile Include="Rencana Pengembalian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Persetujuan.Designer.cs">
-      <DependentUpon>Persetujuan.cs</DependentUpon>
+    <Compile Include="Rencana Pengembalian.Designer.cs">
+      <DependentUpon>Rencana Pengembalian.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpTambahBarang.cs">
       <SubType>Form</SubType>
@@ -197,8 +197,8 @@
     <EmbeddedResource Include="pembina.resx">
       <DependentUpon>pembina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="notifikasi.resx">
-      <DependentUpon>notifikasi.cs</DependentUpon>
+    <EmbeddedResource Include="pengurus-data-barang.resx">
+      <DependentUpon>pengurus-data-barang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pengembalian.resx">
       <DependentUpon>Pengembalian.cs</DependentUpon>
@@ -206,8 +206,8 @@
     <EmbeddedResource Include="pengurus.resx">
       <DependentUpon>pengurus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Persetujuan.resx">
-      <DependentUpon>Persetujuan.cs</DependentUpon>
+    <EmbeddedResource Include="Rencana Pengembalian.resx">
+      <DependentUpon>Rencana Pengembalian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpTambahBarang.resx">
       <DependentUpon>PopUpTambahBarang.cs</DependentUpon>
