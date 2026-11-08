@@ -140,6 +140,12 @@
     <Compile Include="Persetujuan.Designer.cs">
       <DependentUpon>Persetujuan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpTambahBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpTambahBarang.Designer.cs">
+      <DependentUpon>PopUpTambahBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="siswa-katalog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persetujuan.resx">
       <DependentUpon>Persetujuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpTambahBarang.resx">
+      <DependentUpon>PopUpTambahBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="siswa-katalog.resx">
       <DependentUpon>siswa-katalog.cs</DependentUpon>

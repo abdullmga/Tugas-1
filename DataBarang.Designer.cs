@@ -32,18 +32,17 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTambahBarang = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtsearch_siswa = new System.Windows.Forms.TextBox();
             this.cmb_siswa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnTambahBarang = new System.Windows.Forms.Button();
-            this.edit_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hapus_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aksi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kondisi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stok_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stok_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kondisi_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit_barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,10 +68,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nama_barang,
             this.stok_barang,
+            this.harga_barang,
             this.kondisi_barang,
             this.status_barang,
-            this.aksi_barang,
-            this.hapus_barang,
             this.edit_barang});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(26, 135);
@@ -83,7 +81,7 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(915, 385);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -105,6 +103,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(981, 64);
             this.panel1.TabIndex = 9;
+            // 
+            // btnTambahBarang
+            // 
+            this.btnTambahBarang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            this.btnTambahBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTambahBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTambahBarang.ForeColor = System.Drawing.Color.White;
+            this.btnTambahBarang.Location = new System.Drawing.Point(751, 8);
+            this.btnTambahBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTambahBarang.Name = "btnTambahBarang";
+            this.btnTambahBarang.Size = new System.Drawing.Size(208, 46);
+            this.btnTambahBarang.TabIndex = 26;
+            this.btnTambahBarang.Text = "+ Tambah Barang";
+            this.btnTambahBarang.UseVisualStyleBackColor = false;
+            this.btnTambahBarang.Click += new System.EventHandler(this.btnTambahBarang_Click);
             // 
             // label3
             // 
@@ -154,54 +167,28 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Belum ada data barang di database!";
             // 
-            // btnTambahBarang
+            // nama_barang
             // 
-            this.btnTambahBarang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.btnTambahBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTambahBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTambahBarang.ForeColor = System.Drawing.Color.White;
-            this.btnTambahBarang.Location = new System.Drawing.Point(751, 8);
-            this.btnTambahBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTambahBarang.Name = "btnTambahBarang";
-            this.btnTambahBarang.Size = new System.Drawing.Size(208, 46);
-            this.btnTambahBarang.TabIndex = 26;
-            this.btnTambahBarang.Text = "+ Tambah Barang";
-            this.btnTambahBarang.UseVisualStyleBackColor = false;
-            this.btnTambahBarang.Click += new System.EventHandler(this.btnTambahBarang_Click);
+            this.nama_barang.FillWeight = 92.73962F;
+            this.nama_barang.HeaderText = "Nama Barang";
+            this.nama_barang.MinimumWidth = 8;
+            this.nama_barang.Name = "nama_barang";
+            this.nama_barang.ReadOnly = true;
             // 
-            // edit_barang
+            // stok_barang
             // 
-            this.edit_barang.FillWeight = 57.75401F;
-            this.edit_barang.HeaderText = "";
-            this.edit_barang.MinimumWidth = 6;
-            this.edit_barang.Name = "edit_barang";
-            this.edit_barang.ReadOnly = true;
-            this.edit_barang.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.stok_barang.FillWeight = 92.73962F;
+            this.stok_barang.HeaderText = "Jumlah";
+            this.stok_barang.MinimumWidth = 8;
+            this.stok_barang.Name = "stok_barang";
+            this.stok_barang.ReadOnly = true;
             // 
-            // hapus_barang
+            // harga_barang
             // 
-            this.hapus_barang.FillWeight = 18.54792F;
-            this.hapus_barang.HeaderText = "";
-            this.hapus_barang.MinimumWidth = 6;
-            this.hapus_barang.Name = "hapus_barang";
-            this.hapus_barang.ReadOnly = true;
-            this.hapus_barang.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // aksi_barang
-            // 
-            this.aksi_barang.FillWeight = 92.73962F;
-            this.aksi_barang.HeaderText = "Aksi";
-            this.aksi_barang.MinimumWidth = 8;
-            this.aksi_barang.Name = "aksi_barang";
-            this.aksi_barang.ReadOnly = true;
-            // 
-            // status_barang
-            // 
-            this.status_barang.FillWeight = 92.73962F;
-            this.status_barang.HeaderText = "Status";
-            this.status_barang.MinimumWidth = 8;
-            this.status_barang.Name = "status_barang";
-            this.status_barang.ReadOnly = true;
+            this.harga_barang.HeaderText = "Harga";
+            this.harga_barang.MinimumWidth = 6;
+            this.harga_barang.Name = "harga_barang";
+            this.harga_barang.ReadOnly = true;
             // 
             // kondisi_barang
             // 
@@ -211,21 +198,20 @@
             this.kondisi_barang.Name = "kondisi_barang";
             this.kondisi_barang.ReadOnly = true;
             // 
-            // stok_barang
+            // status_barang
             // 
-            this.stok_barang.FillWeight = 92.73962F;
-            this.stok_barang.HeaderText = "Stok";
-            this.stok_barang.MinimumWidth = 8;
-            this.stok_barang.Name = "stok_barang";
-            this.stok_barang.ReadOnly = true;
+            this.status_barang.FillWeight = 92.73962F;
+            this.status_barang.HeaderText = "Status";
+            this.status_barang.MinimumWidth = 8;
+            this.status_barang.Name = "status_barang";
+            this.status_barang.ReadOnly = true;
             // 
-            // nama_barang
+            // edit_barang
             // 
-            this.nama_barang.FillWeight = 92.73962F;
-            this.nama_barang.HeaderText = "Nama Barang";
-            this.nama_barang.MinimumWidth = 8;
-            this.nama_barang.Name = "nama_barang";
-            this.nama_barang.ReadOnly = true;
+            this.edit_barang.HeaderText = "Edit";
+            this.edit_barang.MinimumWidth = 6;
+            this.edit_barang.Name = "edit_barang";
+            this.edit_barang.ReadOnly = true;
             // 
             // DataBarang
             // 
@@ -262,10 +248,9 @@
         private System.Windows.Forms.Button btnTambahBarang;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn stok_barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn harga_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn kondisi_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn status_barang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aksi_barang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hapus_barang;
         private System.Windows.Forms.DataGridViewTextBoxColumn edit_barang;
     }
 }

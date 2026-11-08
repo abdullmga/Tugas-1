@@ -50,10 +50,11 @@ namespace Tugas_1
 
                                     string nama = reader["nama_barang"].ToString();
                                     string jumlah = reader["jumlah_barang"].ToString();
-                                    string kondisi = reader["keadaan_barang"].ToString();
                                     decimal hargaDecimal = Convert.ToDecimal(reader["nominal_harga"]);
                                     string harga = "Rp " + hargaDecimal.ToString();
-                                    dataGridView1.Rows.Add(nama, jumlah, harga, kondisi, "Edit", "Hapus");
+                                    string kondisi = reader["keadaan_barang"].ToString();
+                                    
+                                    dataGridView1.Rows.Add(nama, jumlah, harga, kondisi, "Dipinjam", "Edit");
                                 }
 
                                 label4.Visible = false;
@@ -75,35 +76,18 @@ namespace Tugas_1
 
         private void btnTambahBarang_Click(object sender, EventArgs e)
         {
+            PopUpTambahBarang FormPopUpTambahBarang = new PopUpTambahBarang();
+
+            FormPopUpTambahBarang.FormClosed += FormPopUpTambahBarang_FormClosed;
+
+            FormPopUpTambahBarang.Show();
 
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void FormPopUpTambahBarang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string namaKolom = dataGridView1.Columns[e.ColumnIndex].Name;
-
-            string namaBarang = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            if (namaKolom == "hapus_barang")
-            {
-                DialogResult tanya = MessageBox.Show($"Apakah kamu yakin ingin menghapus barang '{namaBarang}'?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (tanya == DialogResult.Yes)
-                {
-                    HapusDataDatabase(namaBarang);
-                    LoadDataBarang();
-                }
-            }
-            else if (namaKolom == "edit_barang")
-            {
-                string jumlahBarang = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string kondisiBarang = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-                MessageBox.Show($"Membuka form edit untuk barang: {namaBarang}", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            }
-
+            PopUpTambahBarang FormPopUpTambahBarang = new PopUpTambahBarang();
+            FormPopUpTambahBarang.Close();
         }
 
         private void HapusDataDatabase(string namaBarang)
@@ -128,6 +112,22 @@ namespace Tugas_1
             catch (Exception ex)
             {
                 MessageBox.Show("Gagal menghapus data: " + ex.Message, "Error Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string namaKolom = dataGridView1.Columns[e.ColumnIndex].Name;
+
+            if (namaKolom == "edit_barang")
+            {
+                PopUpTambahBarang FormPopUpTambahBarang = new PopUpTambahBarang();
+
+                FormPopUpTambahBarang.FormClosed += FormPopUpTambahBarang_FormClosed;
+
+                FormPopUpTambahBarang.Show();
             }
         }
     }

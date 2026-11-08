@@ -52,6 +52,11 @@ namespace Tugas_1
 
         private void btnDataBarang_Click(object sender, EventArgs e)
         {
+            DataBarang();
+        }
+
+        private void DataBarang()
+        {
             foreach (Form MdiChild in this.MdiChildren)
             {
                 MdiChild.Close();
@@ -96,6 +101,11 @@ namespace Tugas_1
 
             FormPengembalian.Show();
             FormPengembalian.BringToFront();
+        }
+
+        private void pengurus_Load(object sender, EventArgs e)
+        {
+            DataBarang();
         }
     }
 }
