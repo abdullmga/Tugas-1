@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPengembalian = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelKeluar = new System.Windows.Forms.Label();
             this.namaPengguna = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.panel1.Controls.Add(this.btnPengembalian);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.labelKeluar);
             this.panel1.Controls.Add(this.namaPengguna);
@@ -61,30 +59,17 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 573);
+            this.panel1.Size = new System.Drawing.Size(280, 705);
             this.panel1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(7, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 33);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Pengembalian";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(212, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(283, 0);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(191, 52);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(255, 64);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // labelKeluar
@@ -92,9 +77,10 @@
             this.labelKeluar.AutoSize = true;
             this.labelKeluar.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKeluar.ForeColor = System.Drawing.Color.LightCoral;
-            this.labelKeluar.Location = new System.Drawing.Point(6, 532);
+            this.labelKeluar.Location = new System.Drawing.Point(8, 655);
+            this.labelKeluar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelKeluar.Name = "labelKeluar";
-            this.labelKeluar.Size = new System.Drawing.Size(34, 16);
+            this.labelKeluar.Size = new System.Drawing.Size(45, 20);
             this.labelKeluar.TabIndex = 9;
             this.labelKeluar.Text = "Keluar";
             this.labelKeluar.Click += new System.EventHandler(this.labelKeluar_Click);
@@ -104,9 +90,10 @@
             this.namaPengguna.AutoSize = true;
             this.namaPengguna.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namaPengguna.ForeColor = System.Drawing.Color.White;
-            this.namaPengguna.Location = new System.Drawing.Point(6, 490);
+            this.namaPengguna.Location = new System.Drawing.Point(8, 603);
+            this.namaPengguna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.namaPengguna.Name = "namaPengguna";
-            this.namaPengguna.Size = new System.Drawing.Size(151, 18);
+            this.namaPengguna.Size = new System.Drawing.Size(82, 20);
             this.namaPengguna.TabIndex = 8;
             this.namaPengguna.Text = "Pengurus1";
             // 
@@ -115,18 +102,20 @@
             this.RoleDibawah.AutoSize = true;
             this.RoleDibawah.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoleDibawah.ForeColor = System.Drawing.Color.White;
-            this.RoleDibawah.Location = new System.Drawing.Point(6, 511);
+            this.RoleDibawah.Location = new System.Drawing.Point(8, 629);
+            this.RoleDibawah.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RoleDibawah.Name = "RoleDibawah";
-            this.RoleDibawah.Size = new System.Drawing.Size(47, 16);
+            this.RoleDibawah.Size = new System.Drawing.Size(62, 20);
             this.RoleDibawah.TabIndex = 7;
             this.RoleDibawah.Text = "Pengurus";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 479);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 590);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(181, 1);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 1);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // btn_pinjam
@@ -136,9 +125,10 @@
             this.btn_pinjam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pinjam.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pinjam.ForeColor = System.Drawing.Color.White;
-            this.btn_pinjam.Location = new System.Drawing.Point(7, 215);
+            this.btn_pinjam.Location = new System.Drawing.Point(9, 265);
+            this.btn_pinjam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_pinjam.Name = "btn_pinjam";
-            this.btn_pinjam.Size = new System.Drawing.Size(179, 33);
+            this.btn_pinjam.Size = new System.Drawing.Size(239, 41);
             this.btn_pinjam.TabIndex = 5;
             this.btn_pinjam.Text = "Rencana Pembelian";
             this.btn_pinjam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,9 +141,10 @@
             this.btn_pengajuan_barang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pengajuan_barang.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pengajuan_barang.ForeColor = System.Drawing.Color.White;
-            this.btn_pengajuan_barang.Location = new System.Drawing.Point(7, 176);
+            this.btn_pengajuan_barang.Location = new System.Drawing.Point(9, 217);
+            this.btn_pengajuan_barang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_pengajuan_barang.Name = "btn_pengajuan_barang";
-            this.btn_pengajuan_barang.Size = new System.Drawing.Size(179, 33);
+            this.btn_pengajuan_barang.Size = new System.Drawing.Size(239, 41);
             this.btn_pengajuan_barang.TabIndex = 4;
             this.btn_pengajuan_barang.Text = "Persetujuan";
             this.btn_pengajuan_barang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,9 +157,10 @@
             this.btn_data_barang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_data_barang.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_data_barang.ForeColor = System.Drawing.Color.White;
-            this.btn_data_barang.Location = new System.Drawing.Point(7, 137);
+            this.btn_data_barang.Location = new System.Drawing.Point(9, 169);
+            this.btn_data_barang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_data_barang.Name = "btn_data_barang";
-            this.btn_data_barang.Size = new System.Drawing.Size(179, 33);
+            this.btn_data_barang.Size = new System.Drawing.Size(239, 41);
             this.btn_data_barang.TabIndex = 3;
             this.btn_data_barang.Text = "Data Barang";
             this.btn_data_barang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,9 +172,10 @@
             this.Role.AutoSize = true;
             this.Role.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Role.ForeColor = System.Drawing.Color.White;
-            this.Role.Location = new System.Drawing.Point(9, 120);
+            this.Role.Location = new System.Drawing.Point(12, 148);
+            this.Role.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(67, 16);
+            this.Role.Size = new System.Drawing.Size(79, 20);
             this.Role.TabIndex = 2;
             this.Role.Text = "PENGURUS";
             // 
@@ -191,9 +184,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 34);
+            this.label2.Location = new System.Drawing.Point(8, 42);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "SMKS Bina Kerja";
             // 
@@ -202,23 +196,24 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 10);
+            this.label1.Location = new System.Drawing.Point(5, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.Size = new System.Drawing.Size(180, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "OSIS Inventaris";
             // 
             // pengurus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(939, 573);
+            this.ClientSize = new System.Drawing.Size(1252, 705);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(959, 662);
+            this.MaximumSize = new System.Drawing.Size(1273, 804);
             this.Name = "pengurus";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -244,6 +239,5 @@
         private System.Windows.Forms.Label Role;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnPengembalian;
     }
 }

@@ -90,30 +90,6 @@ namespace Tugas_1
             FormPopUpTambahBarang.Close();
         }
 
-        private void HapusDataDatabase(string namaBarang)
-        {
-            string query = "DELETE FROM BARANG WHERE nama_barang = @nama";
-            DatabaseConnection db = new DatabaseConnection();
-
-            try
-            {
-                using (MySqlConnection conn = db.GetConnection())
-                {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@nama", namaBarang);
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Data berhasil dihapus dari database!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal menghapus data: " + ex.Message, "Error Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
