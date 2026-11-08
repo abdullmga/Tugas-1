@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Tugas_1
 {
+    // Menampilkan halaman pembuka dan menyediakan akses login atau pendaftaran.
     public partial class SelamatDatang : Form
     {
         public SelamatDatang()
@@ -19,6 +20,7 @@ namespace Tugas_1
 
         private void btnMasuk_Click(object sender, EventArgs e)
         {
+            // Membuka form login dan menyembunyikan halaman pembuka.
             // Membuat objek baru dari class Masuk ke variabel FormMasuk
             Masuk FormMasuk = new Masuk();
 
@@ -40,6 +42,7 @@ namespace Tugas_1
 
         private void btnPendaftaran_Click(object sender, EventArgs e)
         {
+            // Membuka form pendaftaran akun siswa baru.
             Pendaftaran FormPendaftaran = new Pendaftaran();
 
             FormPendaftaran.FormClosed += FormPendaftaran_FormClosed;

@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace Tugas_1
 {
+    // Menampilkan ringkasan dashboard dan laporan inventaris.
     public partial class pembina_dashboard_laporan : Form
     {
         public pembina_dashboard_laporan()

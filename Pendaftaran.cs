@@ -12,6 +12,7 @@ using BCrypt.Net;
 
 namespace Tugas_1
 {
+    // Menangani pendaftaran akun siswa baru ke tabel USER.
     public partial class Pendaftaran : Form
     {
         public Pendaftaran()

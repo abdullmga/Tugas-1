@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Tugas_1
 {
+    // Dashboard siswa yang mengatur navigasi katalog, pengajuan, dan peminjaman.
     public partial class siswa : Form
     {
 
@@ -24,6 +25,7 @@ namespace Tugas_1
 
         private void btn_katalog_Click(object sender, EventArgs e)
         {
+            // Menampilkan katalog barang sebagai child form MDI.
             foreach (Form mdiChild in this.MdiChildren)
             {
                 mdiChild.Close();
@@ -58,6 +60,7 @@ namespace Tugas_1
 
         private void btn_pengajuan_barang_Click(object sender, EventArgs e)
         {
+            // Menampilkan riwayat pengajuan milik siswa yang sedang login.
             foreach (Form mdiChild in this.MdiChildren)
             {
                 mdiChild.Close();
@@ -75,6 +78,7 @@ namespace Tugas_1
 
         private void btn_pinjam_Click(object sender, EventArgs e)
         {
+            // Membuka form untuk membuat pengajuan peminjaman baru.
             foreach (Form mdiChild in this.MdiChildren)
             {
                 mdiChild.Close();

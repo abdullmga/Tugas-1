@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace Tugas_1
 {
+    // Dashboard pembina untuk memantau data inventaris dan laporan.
     public partial class pembina : Form
     {
         public pembina(string namaUser)

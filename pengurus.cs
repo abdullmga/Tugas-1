@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Tugas_1
 {
+    // Dashboard pengurus yang mengatur navigasi pengelolaan barang dan peminjaman.
     public partial class pengurus : Form
     {
         public pengurus(string namaUser)
@@ -52,24 +53,37 @@ namespace Tugas_1
 
         private void btn_data_barang_Click(object sender, EventArgs e)
         {
-            foreach (Form MdiChild in this.MdiChildren)
+            BukaHalaman(new DataBarang());
+        }
+
+        private void btn_pengajuan_barang_Click(object sender, EventArgs e)
+        {
+            BukaHalaman(new Persetujuan());
+        }
+
+        private void btn_pinjam_Click(object sender, EventArgs e)
+        {
+            BukaHalaman(new Pengembalian());
+        }
+
+        private void BukaHalaman(Form halaman)
+        {
+            // Menutup child MDI lama agar hanya satu halaman pengurus yang aktif.
+            foreach (Form mdiChild in this.MdiChildren)
             {
-                MdiChild.Close();
+                mdiChild.Close();
             }
 
-            DataBarang FormDataBarang = new DataBarang();
-
-            FormDataBarang.MdiParent = this;
-            FormDataBarang.FormBorderStyle = FormBorderStyle.None;
-            FormDataBarang.Dock = DockStyle.Fill;
-
-            FormDataBarang.Show();
-            FormDataBarang.BringToFront();
+            halaman.MdiParent = this;
+            halaman.FormBorderStyle = FormBorderStyle.None;
+            halaman.Dock = DockStyle.Fill;
+            halaman.Show();
+            halaman.BringToFront();
         }
 
         private void pengurus_Load(object sender, EventArgs e)
         {
-         
+            BukaHalaman(new DataBarang());
         }
     }
 }
