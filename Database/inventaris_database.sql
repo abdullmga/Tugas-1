@@ -8,6 +8,7 @@ CREATE DATABASE IF NOT EXISTS `inventaris`
 
 USE `inventaris`;
 
+
 -- =========================================================
 -- DDL - PEMBUATAN TABLE
 -- =========================================================
@@ -35,7 +36,7 @@ CREATE TABLE `USER` (
     `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `nama_user` VARCHAR(100) NOT NULL,
     `nisn` VARCHAR(10) NULL UNIQUE,
-    `username` VARCHAR(30) NOT NULL ,
+    `username` VARCHAR(30) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
     `role` ENUM('siswa', 'pengurus')
         NOT NULL DEFAULT 'siswa',
@@ -455,11 +456,26 @@ SELECT * FROM `RENCANA_PEMBELIAN`;
 
 INSERT INTO `user` (nama_user, username, password, role)
 VALUES 
-('Ahmed Subarjo', 'ahmad', '$2a$12$5mVZ43I9ZUyaAzNKJZVQueQ565YKs9SPdltBhdxUawFuuYwyZ/Ehy', 'pengurus');
+('Pengurus', 'Pengurus1', '$2a$12$fRkM8b5HHEF0Vrabjyr1iugBt/qSxTJOeGOKasYila3l18/0/h1yK', 'pengurus');
+
+-- plain password is "123"
 
 -- https://bcrypt-generator.com/
 -- link untuk generate hash bcrypt password
 
-INSERT INTO `user` (nama_user, username, password, role)
-VALUES 
-('Hamud Bin Khaled', 'hamud', '$2a$12$hyJ5oLtOXMRhzJ4gHWwFNOKMoDxIEAMPufxjJtJ1vKNFg4Krlzm9i', 'pembina');
+
+delete from `user`;
+
+INSERT INTO `BARANG` (`nama_barang`, `jumlah_barang`, `nominal_harga`, `keadaan_barang`) VALUES
+('Mic Wireless', 4, 450000.00, 'Baik'),
+('Speaker Portable', 2, 1200000.00, 'Baik'),
+('Proyektor', 1, 3500000.00, 'Baik'),
+('Kabel Roll 10 m', 5, 85000.00, 'Baik'),
+('Tenda Lipat 3x3', 0, 950000.00, 'Baik'),
+('Kursi Lipat', 30, 120000.00, 'Rusak ringan'),
+('Bendera OSIS', 3, 150000.00, 'Baik'),
+('Megaphone', 0, 300000.00, 'Rusak');
+
+select * from user;
+
+delete from barang;
